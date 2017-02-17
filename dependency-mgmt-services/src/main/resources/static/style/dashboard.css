@@ -542,3 +542,7 @@ i.fa.fa-eye {
 {
 	cursor:pointer;
 }
+.fwidth.navbar-form .input-group .form-control
+{
+	width:300px;
+}

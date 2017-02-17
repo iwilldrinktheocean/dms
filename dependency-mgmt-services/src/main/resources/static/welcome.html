@@ -1,110 +1,131 @@
 <html>
-<head>
-	<link rel="stylesheet" href="./css/bootstrap.min.css" />
-	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css" />
-	<link rel="stylesheet" href="./style/dashboard.css" />
-	<link rel="stylesheet" href="./style/checkboxstyle.css">
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/angular.js"></script>
-	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-	<!-- <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script> -->
-	<script src="./js/Chart.bundle.js"></script>
-	<script src="./js/utils.js"></script>
-	<script src="./js/dashboard.js"></script>	
-</head>
-<body ng-app="DMTApp">
-	<nav class="navbar navbar-inverse bg-primary navbar-theme navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<div class="pull-left left logo" style="height:40px;width:200px;text-align:center;overflow:visible;">
-					<a href="#"><img src="./images/person.png" alt="" class="login-image"></a>
-					<h6 class="" style="color: black;">SAMSONOV ROMAN</h6>
-					<div class="" style="color: gray;font-size: 8px;">Corporate Client</div>
-				</div>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><i class="fa fa-bell"></i></a></li>
-					<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-					<li><a href="#"><i class="fa fa-sign-out"></i></a></li>
-				</ul>
-				<form class="navbar-form navbar-left">
-					<div class="input-group">
-						<input type="text" class="form-control search_box" placeholder="Search everything what you need" />
-					</div>
 
-				</form>
-			</div>
-		</div>
-	</nav>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<div class="nav-side-menu"> 
-					<div class="menu-list">
-						<ul id="menu-content" class="menu-content">
-							<li  data-toggle="collapse" data-target="#products" class="collapsed active">
-								<a href="#">SUMMARY DASHBOARD <span class="arrow"></span></a>
-							</li>
-							<ul class="sub-menu collapse" id="products">
-								<li class="active"><a href="#">REPORTING / METRICS</a></li>
-								<li><a href="#">SERVICES</a></li>
-								<li><a href="#">RELATIONSHIP MANAGEMENT</a></li>
-								<li><a href="#">RESOURCE ALLOCATION</a></li>
-								<li><a href="#">DELIVERY ROADMAP</a></li>
-								<li><a href="#">ADMINISTRATION</a></li>
-							</ul>
-							<li data-toggle="collapse" data-target="#service" class="collapsed">
-								<a href="#">PRIMARY LINK 1 <span class="arrow"></span></a>
-							</li>  
-							<ul class="sub-menu collapse" id="service">
-								<li>LINK 1</li>
-								<li>LINK 2</li>
-								<li>LINK 3</li>
-							</ul>
-							<li data-toggle="collapse" data-target="#new" class="collapsed">
-								<a href="#"> PRIMARY LINK 2<span class="arrow"></span></a>
-							</li>
-							<ul class="sub-menu collapse" id="new">
-								<li>LINK 1</li>
-								<li>LINK 2</li>
-								<li>LINK 3</li>
-							</ul>
-						</ul>
-						<div>
-							<div class="menu_bottom"><p><b>Account Settings</b></p>
-							</div>
-							<div class="menu_bottom_notification">
-								<div>
-									<span>Log in with sms </span>
-									<label class="switch pull-right">
+<head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="./style/dashboard.css" />
+    <link rel="stylesheet" href="./style/checkboxstyle.css">
+    <link rel="stylesheet" href="./style/capmgt.css" />
+
+    <script src="./script/lib/jquery.min.js"></script>
+    <script src="./script/lib/bootstrap.min.js"></script>
+    <script src="./script/lib/angular.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="./script/lib/Chart.bundle.js"></script>
+
+    <script src="./script/utils.js"></script>
+
+    <script src="./script/app.js"></script>
+    <script src="./script/config.js"></script>
+
+    <!--  Controllers Start -->
+    <script src="./script/controllers/CapMgtController.js"></script>
+    <script src="./script/controllers/QueryBuilderController.js"></script>
+    <script src="./script/controllers/AdministrationController.js"></script>
+    <script src="./script/controllers/ServiceTrackerController.js"></script>
+    <script src="./script/controllers/DependencyRelationshipBuilderController.js"></script>
+    <script src="./script/controllers/DependencyConflictReportingController.js"></script>
+    <script src="./script/controllers/DependencyReportingController.js"></script>   
+    <script src="./script/controllers/CapabilityDepMgtController.js"></script>
+    <script src="./script/controllers/RelDepMgtController.js"></script>
+    <script src="./script/controllers/BudgetReportingController.js"></script>
+    <script src="./script/controllers/RelRoadmapController.js"></script>
+    <script src="./script/controllers/referenceTableMgtController.js"></script>
+	<script src="./script/controllers/serviceMaintenanceController.js"></script>
+</head>
+
+<body ng-app="DMTApp">
+    <nav class="navbar navbar-inverse bg-primary navbar-theme navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="pull-left left logo" style="height:40px;width:200px;text-align:center;overflow:visible;">
+                    <a href="#"><img src="./images/person.png" alt="" class="login-image"></a>
+                    <h6 class="" style="color: black;">SAMSONOV ROMAN</h6>
+                    <div class="" style="color: gray;font-size: 8px;">Corporate Client</div>
+                </div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-bell"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i></a></li>
+                </ul>
+                <form class="navbar-form navbar-left fwidth">
+                    <div class="input-group">
+                        <input type="text" class="form-control search_box" placeholder="Search everything what you need" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <div class="nav-side-menu">
+                    <div class="menu-list">
+                        <ul id="menu-content" class="menu-content">
+                            <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                                <a href="#">SUMMARY DASHBOARD <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse" id="products">
+                                <li class="active"><a href="#">REPORTING / METRICS</a></li>
+                                <li><a href="#">SERVICES</a></li>
+                                <li><a href="#">RELATIONSHIP MANAGEMENT</a></li>
+                                <li><a href="#">RESOURCE ALLOCATION</a></li>
+                                <li><a href="#">DELIVERY ROADMAP</a></li>
+                                <li><a href="#">ADMINISTRATION</a></li>
+                            </ul>
+                            <li data-toggle="collapse" data-target="#service" class="collapsed">
+                                <a href="#">PRIMARY LINK 1 <span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse" id="service">
+                                <li>LINK 1</li>
+                                <li>LINK 2</li>
+                                <li>LINK 3</li>
+                            </ul>
+                            <li data-toggle="collapse" data-target="#new" class="collapsed">
+                                <a href="#"> PRIMARY LINK 2<span class="arrow"></span></a>
+                            </li>
+                            <ul class="sub-menu collapse" id="new">
+                                <li>LINK 1</li>
+                                <li>LINK 2</li>
+                                <li>LINK 3</li>
+                            </ul>
+                        </ul>
+                        <div>
+                            <div class="menu_bottom">
+                                <p><b>Account Settings</b></p>
+                            </div>
+                            <div class="menu_bottom_notification">
+                                <div>
+                                    <span>Log in with sms </span>
+                                    <label class="switch pull-right">
 										<input type="checkbox" checked="false">
 										<div class="slider round"></div>
 									</label>
-								</div>
-								<br/>
-								<div>
-									<span>Notifications</span>
-									<label class="switch pull-right">
+                                </div>
+                                <br/>
+                                <div>
+                                    <span>Notifications</span>
+                                    <label class="switch pull-right">
 										<input type="checkbox" checked="false">
 										<div class="slider round"></div>
 									</label>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main maincontentarea">
-				<div ng-view></div>
-				<ng-include src="temp1.html"></ng-include>
-				<ng-include src="temp2.html"></ng-include>
-				<ng-include src="temp5.html"></ng-include>
-				<ng-include src="temp4.html"></ng-include>
-			</div>
-		</div>
-	</div>
-	<script type='text/javascript' src="./js/dashboard.js"> </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main maincontentarea">
+                <div ng-view></div>
+                <ng-include src="temp1.html"></ng-include>
+                <ng-include src="temp2.html"></ng-include>
+                <ng-include src="temp5.html"></ng-include>
+                <ng-include src="temp4.html"></ng-include>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

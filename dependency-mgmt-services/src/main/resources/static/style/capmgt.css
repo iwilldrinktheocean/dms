@@ -1,0 +1,480 @@
+.border-test {
+    border: 1px solid red;
+}
+
+/*
+input,
+select,
+textarea {
+    border: 1px solid #DCE0E4 !important;
+}
+*/
+select option {
+    padding: 8px 8px 7px 8px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.remove-row-margin-top {
+    margin-top: 15px;
+}
+
+.remove-row-margin-bottom {
+    margin-bottom: 15px;
+}
+
+.remove-row-margin {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+
+/* Padding Around: Start*/
+
+.padding-around--xxx-small {
+    padding: 4px;
+}
+
+.padding-around--xx-small {
+    padding: 6px;
+}
+
+.padding-around--x-small {
+    padding: 8px;
+}
+
+.padding-around--small {
+    padding: 10px;
+}
+
+.padding-around--medium {
+    padding: 12px;
+}
+
+
+/* Padding Around: End*/
+
+
+/* Padding top:Start */
+
+.padding-top--xxx-small {
+    padding-top: 4px;
+}
+
+.padding-top--xx-small {
+    padding-top: 6px;
+}
+
+.padding-top--x-small {
+    padding-top: 8px;
+}
+
+.padding-top--small {
+    padding-top: 10px;
+}
+
+.padding-top--medium {
+    padding-top: 12px;
+}
+
+.padding-top-none {
+    padding-top: 0px !important;
+}
+
+
+/* Padding top:End */
+
+
+/* Padding bottom:Start */
+
+.padding-bottom--xxx-small {
+    padding-bottom: 4px;
+}
+
+.padding-bottom--xx-small {
+    padding-bottom: 6px;
+}
+
+.padding-bottom--x-small {
+    padding-bottom: 8px;
+}
+
+.padding-bottom--small {
+    padding-bottom: 10px;
+}
+
+.padding-bottom--medium {
+    padding-bottom: 12px;
+}
+
+.padding-bottom-none {
+    padding-bottom: 0px !important;
+}
+
+
+/* Padding bottom:End */
+
+.padding-left--xxx-small {
+    padding-left: 4px;
+}
+
+.padding-left--xx-small {
+    padding-left: 6px;
+}
+
+.padding-left--x-small {
+    padding-left: 8px;
+}
+
+.padding-left--small {
+    padding-left: 10px;
+}
+
+.padding-left--medium {
+    padding-left: 12px;
+}
+
+.padding-left-none {
+    padding-left: 0px !important;
+}
+
+
+/* Padding left:End */
+
+
+/* Padding bottom:End */
+
+.padding-right--xxx-small {
+    padding-right: 4px;
+}
+
+.padding-right--xx-small {
+    padding-right: 6px;
+}
+
+.padding-right--x-small {
+    padding-right: 8px;
+}
+
+.padding-right--small {
+    padding-right: 10px;
+}
+
+.padding-right--medium {
+    padding-right: 12px;
+}
+
+.padding-right-none {
+    padding-right: 0px !important;
+}
+
+
+/* Padding right:End */
+
+
+/* margin Around: Start*/
+
+.margin-around--xxx-small {
+    margin: 4px;
+}
+
+.margin-around--xx-small {
+    margin: 6px;
+}
+
+.margin-around--x-small {
+    margin: 8px;
+}
+
+.margin-around--small {
+    margin: 10px;
+}
+
+.margin-around--medium {
+    margin: 12px;
+}
+
+
+/* margin Around: End*/
+
+
+/* margin top:Start */
+
+.margin-top--xxx-small {
+    margin-top: 4px;
+}
+
+.margin-top--xx-small {
+    margin-top: 6px;
+}
+
+.margin-top--x-small {
+    margin-top: 8px;
+}
+
+.margin-top--small {
+    margin-top: 10px;
+}
+
+.margin-top--medium {
+    margin-top: 12px;
+}
+
+.margin-top-none {
+    margin-top: 0px !important;
+}
+
+
+/* margin top:End */
+
+
+/* margin bottom:Start */
+
+.margin-bottom--xxx-small {
+    margin-bottom: 4px;
+}
+
+.margin-bottom--xx-small {
+    margin-bottom: 6px;
+}
+
+.margin-bottom--x-small {
+    margin-bottom: 8px;
+}
+
+.margin-bottom--small {
+    margin-bottom: 10px;
+}
+
+.margin-bottom--medium {
+    margin-bottom: 12px;
+}
+
+.margin-bottom-none {
+    margin-bottom: 0px !important;
+}
+
+
+/* margin bottom:End */
+
+.margin-left--xxx-small {
+    margin-left: 4px;
+}
+
+.margin-left--xx-small {
+    margin-left: 6px;
+}
+
+.margin-left--x-small {
+    margin-left: 8px;
+}
+
+.margin-left--small {
+    margin-left: 10px;
+}
+
+.margin-left--medium {
+    margin-left: 12px;
+}
+
+.margin-left-none {
+    margin-left: 0px !important;
+}
+
+
+/* margin left:End */
+
+
+/* margin Right:Start */
+
+.margin-right--xxx-small {
+    margin-right: 4px;
+}
+
+.margin-right--xx-small {
+    margin-right: 6px;
+}
+
+.margin-right--x-small {
+    margin-right: 8px;
+}
+
+.margin-right--small {
+    margin-right: 10px;
+}
+
+.margin-right--medium {
+    margin-right: 12px;
+}
+
+.margin-right-none {
+    margin-right: 0px !important;
+}
+
+
+/* margin right:End */
+
+
+/* margin vertical:Start */
+
+.margin-vertical--xxx-small {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.margin-vertical--xx-small {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.margin-vertical--x-small {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.margin-vertical--small {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.margin-vertical--medium {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.margin-vertical-none {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+
+/* margin vertical:End */
+
+
+/* margin horizontal:Start */
+
+.margin-horizontal--xxx-small {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.margin-horizontal--xx-small {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.margin-horizontal--x-small {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.margin-horizontal--small {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.margin-horizontal--medium {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.margin-horizontal-none {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+
+/* margin horizontal:End */
+
+.no-border {
+    border: none;
+    box-shadow: none;
+}
+
+#cap-chart-block .panel-body {
+    padding: 0px;
+    padding-top: 7px;
+}
+
+
+/*
+.cap-mgt-chart-center-text {
+    position: relative;
+    top: -70px;
+    left: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+*/
+
+.cap-mgt-chart {
+    width: 275px;
+    height: 120px;
+    position: relative;
+    left: -70px;
+    padding-left: 30px;
+}
+
+.cap-mgt-chart-bottom-text {
+    text-align: center;
+    font-size: 12px;
+}
+
+.cap-form-row {
+    padding: 25px 0px 25px 0px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #EDF0F5;
+}
+
+#cap-adctivity-admin label {
+    font-weight: normal;
+    padding-right: 15px;
+}
+
+#Services,
+#releases,
+#projects,
+#apps-apis {
+    width: 100%;
+}
+
+#result-capability {
+    height: 297px;
+}
+
+@media all and (-ms-high-contrast:none) {
+    *::-ms-backdrop,
+    #result-capability {
+        height: 288px;
+    }
+    /* IE11 */
+}
+
+#filter-cap-owner,
+#filter-cap-type {
+    width: 188px;
+}
+
+#apps-apis,
+#projects,
+#releases,
+#services {
+    height: 142px;
+}

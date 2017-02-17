@@ -1,0 +1,998 @@
+	        	<h5 class="header content-title">
+	        		<i ng-click="go('/dependencyReporting')" class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Dynamic Query Builder
+	        	</h5>
+	        	<div class="row">
+	        		<div class="col-sm-12 col-md-12">
+	        			<div class="panel panel-default">
+	        				<div class="panel-heading">Dependency Reporting / Metrics</div>
+	        				<div class="panel-body">
+
+
+
+	        					<div class="table-responsive" id="querytable" >
+	        						<table class="table">
+	        							<thead>
+	        								<tr>
+	        									<th>SELECT</th>
+	        									<th>SEARCH</th>
+	        									<th>CONDITION</th>
+	        									<th>SORT</th>
+	        									<th>TOTAL</th>
+	        									<th>SELECT</th>
+	        									<th>SEARCH</th>
+	        									<th>CONDITION</th>
+	        									<th>SORT</th>
+	        									<th>TOTAL</th>
+	        								</tr>
+	        							</thead>
+	        							<tbody>
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbprojectid" class="styled" type="checkbox" checked="" />
+	        												<label for="cbprojectid">
+	        													Project ID
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbservice" class="styled" type="checkbox" checked="" />
+	        												<label for="cbservice">
+	        													Service
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbrelease" class="styled" type="checkbox" checked="" />
+	        												<label for="cbrelease">
+	        													Project ID
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="owner" class="styled" type="checkbox" checked="" />
+	        												<label for="owner">
+	        													Owner
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbcapability" class="styled" type="checkbox" checked="" />
+	        												<label for="cbcapability">
+	        													Capability
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbbu" class="styled" type="checkbox" checked="" />
+	        												<label for="cbbu">
+	        													Business Unit
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbreq" class="styled" type="checkbox" checked="" />
+	        												<label for="cbreq">
+	        													Requirements
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbcapabilitytype" class="styled" type="checkbox" checked="" />
+	        												<label for="cbcapabilitytype">
+	        													Capability Type
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="application" class="styled" type="checkbox" checked="" />
+	        												<label for="application">
+	        													Application
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbbtype" class="styled" type="checkbox" checked="" />
+	        												<label for="cbbtype">
+	        													Business Type
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbcr" class="styled" type="checkbox" checked="" />
+	        												<label for="cbcr">
+	        													Change Request
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbstatus" class="styled" type="checkbox" checked="" />
+	        												<label for="cbstatus">
+	        													Status
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+
+	        								<tr>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbgaps" class="styled" type="checkbox" checked="" />
+	        												<label for="cbgaps">
+	        													GAPS
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<div class="checkbox checkbox-primary">
+	        												<input id="cbknowndiff" class="styled" type="checkbox" checked="" />
+	        												<label for="cbknowndiff">
+	        													Known Differences
+	        												</label>
+	        											</div>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Project ID</option>
+	        												<option>Release</option>
+	        												<option>Capability</option>
+	        												<option>Requirements</option>
+	        												<option>Application</option>
+	        												<option>Change Request</option>
+	        												<option>GAPS</option>
+	        												<option>Service</option>
+	        												<option>Owner</option>
+	        												<option>Business Unit</option>
+	        												<option>Capability Type</option>
+	        												<option>Business Type</option>
+	        												<option>Status</option>
+	        												<option>Known Difference</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>=</option>
+	        												<option>!=</option>
+	        												<option>&lt;&gt;</option>
+	        												<option>&gt;&gt;</option>
+	        												<option>&lt;&lt;&gt;&gt;</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Descend</option>
+	        												<option>Ascend</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        									<td>
+	        										<div class="form-group form-group-sm">
+	        											<select class="form-control">
+	        												<option>Group</option>
+	        												<option>Sum</option>
+	        												<option>Avg</option>
+	        												<option>Count</option>
+	        												<option>Min</option>
+	        												<option>Max</option>
+	        											</select>
+	        										</div>
+	        									</td>
+	        								</tr>
+
+	        							</tbody>
+	        						</table>
+	        					</div>
+
+
+
+	        					<div class="row">
+	        						<div class="col-md-11 col-sm-11">
+
+
+	        							<table class="table table-striped" id="queryresultstable">
+	        								<thead>
+	        									<tr>
+	        										<th>XXX</th>
+	        										<th>XXX</th>
+	        										<th>XXX</th>
+	        										<th>XXX</th>
+	        									</tr>
+	        								</thead>
+	        								<tbody>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Infrastructure</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+	        									<tr>
+	        										<td>PD595</td>
+	        										<td>Business</td>
+	        										<td>07/20/17</td>
+	        										<td>XXXXXX</td>
+	        									</tr>
+
+	        								</tbody>
+	        							</table>
+
+	        						</div>
+	        						<div class="col-md-1 col-sm-1" id="btngroup">
+	        							<button type="button" class="btn btn-primary btn-xs btn-block">Run</button>
+	        							<button type="button" class="btn btn-primary btn-xs btn-block">Export</button>
+	        							<button type="button" class="btn btn-primary btn-xs btn-block">Save</button>
+	        							<button type="button" class="btn btn-primary btn-xs btn-block">Delete</button>
+	        							<button type="button" class="btn btn-primary btn-xs btn-block">Cancel</button>
+	        						</div>
+	        					</div>
+
+
+	        				</div>
+	        			</div>	
+	        		</div>
+	        	</div>

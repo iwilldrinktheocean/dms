@@ -1,0 +1,302 @@
+<div class="capability-mgt" ng-controller="capMgtController">
+    <h5 class="header content-title">
+        <i class="fa fa-arrow-left" aria-hidden="true" ng-click="go('/administration' )"></i>&nbsp;&nbsp;{{title}}
+    </h5>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Main Counters</div>
+                <div class="panel-body" id="cap-chart-block">
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-1">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="cap-with-relationship"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Number of Capabilities with Relationships</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2 ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="tot-completed-capabilities"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number Of Completed Capabilities</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2  ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="cap-assigned-cost"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number of Capabilities Aligned with Release</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2  ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="cap-alligned-release"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number of Capabilities Aligned with Release</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2  ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="cap-in-production"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number of Capabilities in Production</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-heading adjusted-panel-heading">Activities Administration</div>
+            <div class="row" id="cap-adctivity-admin">
+                <!-- Left Panel Start -->
+                <div class="col-md-9">
+                    <div class="panel panel-default no-margin padding-around--x-small">
+                        <div class="panel-body no-border">
+                            <div class="cap-form-row padding-top-none border-bottom">
+                                <div class="">
+                                    <label class="radio-inline"><input type="radio" name="cap-admin-radio">New Entry</label>
+                                    <label class="radio-inline"><input type="radio" name="cap-admin-radio">Retire</label>
+                                    <label class="radio-inline"><input type="radio" name="cap-admin-radio">CR</label>
+                                </div>
+                                <div class=" row remove-row-margin-top ">
+                                    <form class="form-inline ">
+                                        <div class="form-group col-md-4 ">
+                                            <label for="date-entered">Date Entered</label>
+                                            <input type="text" class="form-control" id="date-entered" size="7">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="date-modified">Modified</label>
+                                            <input type="text" class="form-control" id="date-modified" size="15">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="date-retired">Retired</label>
+                                            <input type="text" class="form-control" id="date-retired" size="15">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="cap-form-row  border-bottom">
+                                <div class="row ">
+                                    <div class=" col-md-3 ">
+                                        <label for="capability-id">Capability ID</label>
+                                        <input type="text" class="form-control" id="capability-id" size="2">
+                                    </div>
+                                    <div class="col-md-5 ">
+                                        <label for="capability-name">Capability Name</label>
+                                        <input type="text" class="form-control" id="capability-name" size="20">
+                                    </div>
+                                    <div class=" col-md-4 ">
+                                        <label for="capability-alias">Capability Alias</label>
+                                        <input type="text" class="form-control" id="capability-alias" size="10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cap-form-row  border-bottom">
+                                <div class=" row">
+                                    <label for="capability-id" class="col-md-2">Capability Description</label>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" rows="2" style="width:100%"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class=" row remove-row-margin-top">
+                                    <div class="col-md-3">
+                                        <label class="radio-inline"><input type="radio" name="gap-radio">GAP</label>
+                                        <label class="radio-inline"><input type="radio" name="kd-radio">KD</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="meta-data" class="col-md-2">Meta Data</label>
+                                        <div class="col-md-10 no-padding">
+                                            <input type="text" class="form-control" id="meta-data">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" row remove-row-margin-top">
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-4 padding-right--small">
+                                                <select class="form-control " id="capability-owner">
+                                                    <option>Capability Owner</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 padding-right--small">
+                                                <select class="form-control" id="business-unit">
+                                                    <option>Business Unit</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 padding-right--small">
+                                                <select class="form-control" id="capability-type">
+                                                    <option>Capability Type</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-4 ">
+
+                                        <label for="low" class="col-md-2 padding-top--xx-small">Cost</label>
+                                        <div class="col-md-5 padding-left--small padding-right-none">
+                                            <input type="text" class="form-control" id="low" placeholder="Low" />
+                                        </div>
+                                        <div class="col-md-5 padding-left--small padding-right-none">
+                                            <input type="text" class="form-control" id="high" placeholder="High" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cap-form-row padding-bottom-none">
+                                <div class="row">
+                                    <div class="col-md-10 padding-bottom-none">
+                                        <div class=" row">
+                                            <div class=" col-md-3 padding-right-none  ">
+                                                <label for="sel1" class="display-block">Apps/APIs</label>
+                                                <select class="form-control" id="apps-apis" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 padding-right-none ">
+                                                <label for="sel1" class="display-block">Projects</label>
+                                                <select class="form-control" id="projects" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 padding-right-none ">
+                                                <label for="sel1" class="display-block">Releases</label>
+                                                <select class="form-control" id="releases" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                            </div>
+                                            <div class=" col-md-3 padding-right-none">
+                                                <label for="sel1" class="display-block">Services</label>
+                                                <select class="form-control" id="services" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-primary display-block width-100 margin-vertical--x-small" id="load">Load</button>
+                                        <button type="button" class="btn btn-primary display-block width-100 margin-vertical--x-small" id="update">Update</button>
+                                        <button type="button" class="btn btn-primary display-block width-100 margin-vertical--x-small" id="extract">Extract</button>
+                                        <button type="button" class="btn btn-default display-block width-100 margin-top--x-small" id="cancel">Cancel</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left Panel End -->
+                <!-- Right Panel Start -->
+                <div class="col-md-3">
+                    <div class="panel panel-default no-margin padding-around--x-small">
+                        <div class="panel-body no-border">
+                            <div class="cap-form-row border-bottom padding-top-none ">
+                                <div class="row">
+                                    <div class="col-md-9 ">
+                                        <input type="text" class="form-control" id="search" placeholder="Search">
+
+                                    </div>
+                                    <div class="col-md-3 no-padding"><button type="button" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button></div>
+                                </div>
+
+                            </div>
+
+                            <div class="cap-form-row border-bottom">
+                                <label>Filter</label>
+                                <div class="form-group">
+                                    <select class="form-control" id="filter-cap-owner">
+                                        <option>Capability Owner</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="filter-cap-type">
+                                        <option>Capability Type</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="radio-inline"><input type="radio" name="filter-admin-radio">CR</label>
+                                    <label class="radio-inline"><input type="radio" name="filter-admin-radio">GAP</label>
+                                    <label class="radio-inline"><input type="radio" name="filter-admin-radio">KD</label>
+                                </div>
+                            </div>
+                            <div class="cap-form-row padding-bottom-none">
+                                <label>Results</label>
+                                <select multiple class="form-control" id="result-capability">
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                        <option>Capability 1</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Panel End -->
+            </div>
+        </div>
+    </div>
+</div>
