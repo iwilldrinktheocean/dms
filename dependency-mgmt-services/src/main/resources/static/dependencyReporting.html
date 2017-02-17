@@ -1,0 +1,312 @@
+
+          <h5 class="header content-title"><i ng-click="go('/relDepMgt')" class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Dependency Reporting / Metrics</h5>
+		<div class="row">
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Dynamic Reporting</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Number of Saved Queries</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/diagonal.png" class="panelcontent-image" ng-click="go('/queryBuilder')" />
+							</div>
+						</div>
+
+  					</div>
+				</div>
+			</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Budget Reporting</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Release Budget</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Budget Used</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">FTE Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Infra Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/dollar.png" class="panelcontent-image" ng-click="go('/budgetReporting')" />
+							</div>
+						</div>
+
+  					</div>
+				</div>
+       		</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">FTE Allocation Reporting</div>
+	  				<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total FTE's</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">FTE's Allocated</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Current Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/group.png" class="panelcontent-image" ng-click="go('/dependencyConflictReporting')" />
+							</div>
+						</div>
+
+	  				</div>
+				</div>
+       		</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Dependency Conflict Reporting</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Capabilities</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Applications</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Releases</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Services</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>							
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/chainlink.png" class="panelcontent-image" ng-click="go('/dependencyConflictReporting')" />
+							</div>
+						</div>
+
+  					</div>
+				</div>
+			</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Program / Project Reporting</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Programs</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Projects</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Program Costs</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Project costs</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title"></div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/mnu.png" class="panelcontent-image" ng-click="go('/dependencyConflictReporting')" />
+							</div>
+						</div>						
+  					</div>
+				</div>
+       		</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Capability / Requirements Reporting</div>
+	  				<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Capabilities</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Capabilities Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Cap In-Use</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Cap not used</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/tape.png" class="panelcontent-image" ng-click="go('/dependencyConflictReporting')" />
+							</div>
+						</div>						
+	  				</div>
+				</div>
+       		</div>
+		</div>

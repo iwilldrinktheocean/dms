@@ -1,0 +1,312 @@
+
+          <h5 class="header content-title"><i ng-click="go('/relDepMgt')" class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Dependency Relationship Builder</h5>
+		<div class="row">
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Capability Relationship Builder</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. of Capabilities</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Cost Savings</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. of Applications</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Development Costs</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/tape.png" class="panelcontent-image" ng-click="go('/capabilityDepMgt')" />
+							</div>
+						</div>
+
+  					</div>
+				</div>
+			</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Application Relationship Builder</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Applications</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Savings</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total FTE</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/alpha.png" class="panelcontent-image" ng-click="go('/capabilityDepMgt')" />
+							</div>
+						</div>
+
+  					</div>
+				</div>
+       		</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Release Relationship Builder</div>
+	  				<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">xxxx</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Savings</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total FTE</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/calendar.png" class="panelcontent-image" ng-click="go('/capabilityDepMgt')" />
+							</div>
+						</div>
+
+	  				</div>
+				</div>
+       		</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Process Relationship Builder</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. of Processes</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. of Releases</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Applications</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. of Services</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>							
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/spring.png" class="panelcontent-image" ng-click="go('/capabilityDepMgt')" />
+							</div>
+						</div>
+
+  					</div>
+				</div>
+			</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Project Relationship Builder</div>
+  					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">No. Applications</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Savings</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total FTE</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/mnu.png" class="panelcontent-image" ng-click="go('/capabilityDepMgt')" />
+							</div>
+						</div>						
+  					</div>
+				</div>
+       		</div>
+        	<div class="col-sm-6 col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">Services Relationship Builder</div>
+	  				<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+							<div class="panelcontent-title">xxxx</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Cost</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total App Savings</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">Total FTE</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+							<div class="col-sm-6">
+							<div class="panelcontent-title">&nbsp;</div>
+							<div class="panelcontent-body">&nbsp;</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="form-group panelalign-select">
+					            <label class="panelselect-header">SELECT RELEASE</label>
+								<select class="input-large form-control selectstyle">
+								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
+								</select>
+								</div>
+							</div>
+							<div class="col-sm-4 text-center">
+							<img src="./images/setting.png" class="panelcontent-image" ng-click="go('/capabilityDepMgt')" />
+							</div>
+						</div>						
+	  				</div>
+				</div>
+       		</div>
+		</div>
