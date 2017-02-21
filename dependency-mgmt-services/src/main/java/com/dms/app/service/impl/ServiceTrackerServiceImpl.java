@@ -37,38 +37,38 @@ public class ServiceTrackerServiceImpl implements ServiceTrackerService {
 	}
 
 	@Override
-	public List<ProjectDetail> getOperationalActProjectsCompleted(String serviceID) {
-		return serviceTrackerDao.getOperationalActProjectsCompleted(serviceID);
+	public List<ProjectDetail> getOperationalActProjectsCompleted(String releaseId, String serviceID) {
+		return serviceTrackerDao.getOperationalActProjectsCompleted(releaseId, serviceID);
 	}
 
 	@Override
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsInProgress(String serviceID) {
-		return serviceTrackerDao.getProductActPrjTrackProjectsInProgress(serviceID);
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsInProgress(String releaseId, String serviceID) {
+		return serviceTrackerDao.getProductActPrjTrackProjectsInProgress(releaseId, serviceID);
 	}
 
 	@Override
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsUnassigned(String serviceID) {
-		return serviceTrackerDao.getProductActPrjTrackProjectsUnassigned(serviceID);
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsUnassigned(String releaseId, String serviceID) {
+		return serviceTrackerDao.getProductActPrjTrackProjectsUnassigned(releaseId, serviceID);
 	}
 
 	@Override
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsCompleted(String serviceID) {
-		return serviceTrackerDao.getProductActPrjTrackProjectsCompleted(serviceID);
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsCompleted(String releaseId, String serviceID) {
+		return serviceTrackerDao.getProductActPrjTrackProjectsCompleted(releaseId, serviceID);
 	}
 
 	@Override
-	public List<ServiceRequirement> getProductActReqToService(String serviceID) {
-		return serviceTrackerDao.getProductActReqToService(serviceID);
+	public List<ServiceRequirement> getProductActReqToService(String releaseId, String serviceID) {
+		return serviceTrackerDao.getProductActReqToService(releaseId, serviceID);
 	}
 
 	@Override
-	public List<ServiceRequirement> getProductActReqAcrossAllServices(String serviceID) {
-		return serviceTrackerDao.getProductActReqAcrossAllServices(serviceID);
+	public List<ServiceRequirement> getProductActReqAcrossAllServices(String releaseId, String serviceID) {
+		return serviceTrackerDao.getProductActReqAcrossAllServices(releaseId, serviceID);
 	}
 
 	@Override
-	public ServiceTrackerDetail getTotalProjectsAndReqOrCapabilities(String serviceID) {
-		return serviceTrackerDao.getTotalProjectsAndReqOrCapabilities(serviceID);
+	public ServiceTrackerDetail getTotalProjectsAndReqOrCapabilities(String releaseId, String serviceID) {
+		return serviceTrackerDao.getTotalProjectsAndReqOrCapabilities(releaseId, serviceID);
 	}
 
 }

@@ -3,12 +3,11 @@
  */
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dms.app.response.tracker.ProjectTrackResponse;
@@ -51,9 +50,9 @@ public class ServiceTrackerController {
 		return services;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/operational/projects/inprogress/release/{releaseId}/service/{serviceID}/", method = RequestMethod.GET)
-	public ProjectDetailResponse getOperationalActProjectsInProgress(@PathParam("releaseId") String releaseId,
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/operational/projects/inprogress", method = RequestMethod.GET)
+	public ProjectDetailResponse getOperationalActProjectsInProgress(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getOperationalActProjectsInProgress ");
 		
 		ProjectDetailResponse projects = new ProjectDetailResponse();
@@ -73,14 +72,14 @@ public class ServiceTrackerController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/operational/projects/completed/release/{releaseId}/service/{serviceID}", method = RequestMethod.GET)
-	public ProjectDetailResponse getOperationalActProjectsCompleted(@PathParam("releaseId") String releaseId, 
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/operational/projects/completed", method = RequestMethod.GET)
+	public ProjectDetailResponse getOperationalActProjectsCompleted(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getOperationalActProjectsCompleted ");
 		
 		ProjectDetailResponse projects = new ProjectDetailResponse();
 		try {
-			projects.setProjectDetails(serviceTrackerService.getOperationalActProjectsCompleted(serviceID));
+			projects.setProjectDetails(serviceTrackerService.getOperationalActProjectsCompleted(releaseId, serviceID));
 			projects.setStatus(ServiceResponseStatus.SUCCESS);
 			projects.setMessage(ServiceResponseStatus.SUCCESS.name());
 			projects.setDescription(ServiceResponseStatus.SUCCESS.name());
@@ -95,14 +94,14 @@ public class ServiceTrackerController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/product/activities/projects/inprogress/release/{releaseId}/service/{serviceID}", method = RequestMethod.GET)
-	public ProjectTrackResponse getProductActPrjTrackProjectsInProgress(@PathParam("releaseId") String releaseId, 
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/product/activities/projects/inprogress", method = RequestMethod.GET)
+	public ProjectTrackResponse getProductActPrjTrackProjectsInProgress(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getProductActPrjTrackProjectsInProgress ");
 		
 		ProjectTrackResponse projects = new ProjectTrackResponse();
 		try {
-			projects.setProjectTrackDetails(serviceTrackerService.getProductActPrjTrackProjectsInProgress(serviceID));
+			projects.setProjectTrackDetails(serviceTrackerService.getProductActPrjTrackProjectsInProgress(releaseId, serviceID));
 			projects.setStatus(ServiceResponseStatus.SUCCESS);
 			projects.setMessage(ServiceResponseStatus.SUCCESS.name());
 			projects.setDescription(ServiceResponseStatus.SUCCESS.name());
@@ -117,14 +116,14 @@ public class ServiceTrackerController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/product/activities/projects/unassigned/release/{releaseId}/service/{serviceID}", method = RequestMethod.GET)
-	public ProjectTrackResponse getProductActPrjTrackProjectsUnassigned(@PathParam("releaseId") String releaseId,
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/product/activities/projects/unassigned", method = RequestMethod.GET)
+	public ProjectTrackResponse getProductActPrjTrackProjectsUnassigned(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getProductActPrjTrackProjectsUnassigned ");
 		
 		ProjectTrackResponse projects = new ProjectTrackResponse();
 		try {
-			projects.setProjectTrackDetails(serviceTrackerService.getProductActPrjTrackProjectsUnassigned(serviceID));
+			projects.setProjectTrackDetails(serviceTrackerService.getProductActPrjTrackProjectsUnassigned(releaseId, serviceID));
 			projects.setStatus(ServiceResponseStatus.SUCCESS);
 			projects.setMessage(ServiceResponseStatus.SUCCESS.name());
 			projects.setDescription(ServiceResponseStatus.SUCCESS.name());
@@ -139,14 +138,14 @@ public class ServiceTrackerController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/product/activities/projects/completed/release/{releaseId}/service/{serviceID}", method = RequestMethod.GET)
-	public ProjectTrackResponse getProductActPrjTrackProjectsCompleted(@PathParam("releaseId") String releaseId,
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/product/activities/projects/completed", method = RequestMethod.GET)
+	public ProjectTrackResponse getProductActPrjTrackProjectsCompleted(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getProductActPrjTrackProjectsUnassigned ");
 		
 		ProjectTrackResponse projects = new ProjectTrackResponse();
 		try {
-			projects.setProjectTrackDetails(serviceTrackerService.getProductActPrjTrackProjectsCompleted(serviceID));
+			projects.setProjectTrackDetails(serviceTrackerService.getProductActPrjTrackProjectsCompleted(releaseId, serviceID));
 			projects.setStatus(ServiceResponseStatus.SUCCESS);
 			projects.setMessage(ServiceResponseStatus.SUCCESS.name());
 			projects.setDescription(ServiceResponseStatus.SUCCESS.name());
@@ -161,14 +160,14 @@ public class ServiceTrackerController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/product/activities/requirements/to/service/release/{releaseId}/service/{serviceID}", method = RequestMethod.GET)
-	public ServiceRequirementResponse getProductActReqToService(@PathParam("releaseId") String releaseId,
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/product/activities/requirements/to/service", method = RequestMethod.GET)
+	public ServiceRequirementResponse getProductActReqToService(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getProductActReqToService ");
 		
 		ServiceRequirementResponse requirements = new ServiceRequirementResponse();
 		try {
-			requirements.setServiceRequirements(serviceTrackerService.getProductActReqToService(serviceID));
+			requirements.setServiceRequirements(serviceTrackerService.getProductActReqToService(releaseId, serviceID));
 			requirements.setStatus(ServiceResponseStatus.SUCCESS);
 			requirements.setMessage(ServiceResponseStatus.SUCCESS.name());
 			requirements.setDescription(ServiceResponseStatus.SUCCESS.name());
@@ -183,14 +182,14 @@ public class ServiceTrackerController {
 		return requirements;
 	}
 	
-	@RequestMapping(value = "/dependency/service/tracker/product/activities/requirements/all/service/release/{releaseId}/service/{serviceID}", method = RequestMethod.GET)
-	public ServiceRequirementResponse getProductActReqAcrossAllServices(@PathParam("releaseId") String releaseId,
-			@PathParam("serviceID") String serviceID) {
+	@RequestMapping(value = "/dependency/service/tracker/product/activities/requirements/all/service", method = RequestMethod.GET)
+	public ServiceRequirementResponse getProductActReqAcrossAllServices(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
 		logger.info("Start getProductActReqAcrossAllServices ");
 		
 		ServiceRequirementResponse requirements = new ServiceRequirementResponse();
 		try {
-			requirements.setServiceRequirements(serviceTrackerService.getProductActReqAcrossAllServices(serviceID));
+			requirements.setServiceRequirements(serviceTrackerService.getProductActReqAcrossAllServices(releaseId, serviceID));
 			requirements.setStatus(ServiceResponseStatus.SUCCESS);
 			requirements.setMessage(ServiceResponseStatus.SUCCESS.name());
 			requirements.setDescription(ServiceResponseStatus.SUCCESS.name());

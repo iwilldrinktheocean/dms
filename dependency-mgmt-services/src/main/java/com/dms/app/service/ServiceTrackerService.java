@@ -24,17 +24,17 @@ public interface ServiceTrackerService {
 	
 	public List<ProjectDetail> getOperationalActProjectsInProgress(String releaseId, String serviceID);
 	
-	public List<ProjectDetail> getOperationalActProjectsCompleted(String serviceID);
+	public List<ProjectDetail> getOperationalActProjectsCompleted(String releaseId, String serviceID);
 	
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsInProgress(String serviceID);
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsInProgress(String releaseId, String serviceID);
 	
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsUnassigned(String serviceID);
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsUnassigned(String releaseId, String serviceID);
 	
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsCompleted(String serviceID);
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsCompleted(String releaseId, String serviceID);
 	
-	public List<ServiceRequirement> getProductActReqToService(String serviceID);
+	public List<ServiceRequirement> getProductActReqToService(String releaseId, String serviceID);
 	
-	public List<ServiceRequirement> getProductActReqAcrossAllServices(String serviceID);
+	public List<ServiceRequirement> getProductActReqAcrossAllServices(String releaseId, String serviceID);
 	
-	public ServiceTrackerDetail getTotalProjectsAndReqOrCapabilities(String serviceID);
+	public ServiceTrackerDetail getTotalProjectsAndReqOrCapabilities(String releaseId, String serviceID);
 }

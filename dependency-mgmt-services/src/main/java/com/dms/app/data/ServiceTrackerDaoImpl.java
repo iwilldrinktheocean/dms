@@ -68,14 +68,15 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ProjectDetail> getOperationalActProjectsCompleted(String serviceID) {
+	public List<ProjectDetail> getOperationalActProjectsCompleted(String releaseId, String serviceID) {
 		SimpleJdbcCall procOpsActPrjCompleted = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procOpsActPrjCompleted.withProcedureName("tracker_Ops_projects_completed")	
 		.returningResultSet("projectDetails", new ProjectDetailRowMapper())
-		.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procOpsActPrjCompleted.execute(input);
@@ -86,14 +87,15 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsInProgress(String serviceID) {
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsInProgress(String releaseId, String serviceID) {
 		SimpleJdbcCall procProdActPrjInProgress = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procProdActPrjInProgress.withProcedureName("tracker_prod_track_projects_completed")	
 		.returningResultSet("projectTrackDetails", new ProjectTrackDetailRowMapper())
-		.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procProdActPrjInProgress.execute(input);
@@ -104,14 +106,15 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsUnassigned(String serviceID) {
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsUnassigned(String releaseId, String serviceID) {
 		SimpleJdbcCall procProdActPrjUnassigned = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procProdActPrjUnassigned.withProcedureName("tracker_prod_track_projects_completed")	
 		.returningResultSet("projectTrackDetails", new ProjectTrackDetailRowMapper())
-		.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procProdActPrjUnassigned.execute(input);
@@ -122,14 +125,15 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ProjectTrackDetail> getProductActPrjTrackProjectsCompleted(String serviceID) {
+	public List<ProjectTrackDetail> getProductActPrjTrackProjectsCompleted(String releaseId, String serviceID) {
 		SimpleJdbcCall procProdActPrjCompleted = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procProdActPrjCompleted.withProcedureName("tracker_prod_track_projects_completed")	
 		.returningResultSet("projectTrackDetails", new ProjectTrackDetailRowMapper())
-		.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procProdActPrjCompleted.execute(input);
@@ -140,14 +144,15 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ServiceRequirement> getProductActReqToService(String serviceID) {
+	public List<ServiceRequirement> getProductActReqToService(String releaseId, String serviceID) {
 		SimpleJdbcCall procProdActReqToService = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procProdActReqToService.withProcedureName("tracker_prod_req_to_service")	
 		.returningResultSet("serviceReq", new ServiceRequirementRowMapper())
-		.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procProdActReqToService.execute(input);
@@ -158,14 +163,15 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ServiceRequirement> getProductActReqAcrossAllServices(String serviceID) {
+	public List<ServiceRequirement> getProductActReqAcrossAllServices(String releaseId, String serviceID) {
 		SimpleJdbcCall procProdActReqAllService = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procProdActReqAllService.withProcedureName("tracker_prod_req_to_service")	
 		.returningResultSet("serviceReq", new ServiceRequirementRowMapper())
-		.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procProdActReqAllService.execute(input);
@@ -176,7 +182,7 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public ServiceTrackerDetail getTotalProjectsAndReqOrCapabilities(String serviceID) {
+	public ServiceTrackerDetail getTotalProjectsAndReqOrCapabilities(String releaseId, String serviceID) {
 		SimpleJdbcCall procServiceTracker = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procServiceTracker.withProcedureName("tracker_details")	
@@ -191,9 +197,10 @@ public class ServiceTrackerDaoImpl extends BaseDao implements ServiceTrackerDao 
 			}
 		});
 		
-		procServiceTracker.declareParameters(new SqlParameter("serviceID", Types.VARCHAR));
+		procServiceTracker.declareParameters(new SqlParameter("releaseId", Types.DECIMAL), new SqlParameter("serviceID", Types.VARCHAR));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("releaseId", releaseId);
 		input.put("serviceID", serviceID);
 
 		Map<String, Object> data = procServiceTracker.execute(input);
