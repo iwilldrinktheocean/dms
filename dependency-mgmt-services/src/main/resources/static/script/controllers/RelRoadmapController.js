@@ -1,5 +1,14 @@
 DMTApp.controller('relRoadmapController', function($scope, $http, $location) {
     $scope.title = "As a software developer, I've always loved to build things...";
+	$scope.releases = null;
+    $http.get(config.apiURL + 'releaseDependencyMgmt/releases').then(function(response) {
+        try {
+            $scope.releases = response.data.releaseDetails;
+        } catch (err) {
+            $scope.error = response.data;
+        }
+    });
+
     Chart.defaults.global.defaultFontFamily = "'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     Chart.defaults.global.legend.position = 'bottom';
     Chart.defaults.global.legend.labels.usePointStyle = true;
