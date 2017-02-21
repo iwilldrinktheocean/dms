@@ -1,22 +1,24 @@
-DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
+DMTApp.controller('relDepMgtController', function($scope, $http, $location,config) {
     $scope.title = "Welcome to the application.";
-    $http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/releases').then(function(response) {
+    $http.get(config.apiURL + 'releaseDependencyMgmt/releases').then(function(response) {
+        $scope.report = {dependencyMetric:null,dependencyByService:null,dependencyRelationshipManagement:null,resourceAllocation:null,deliveryRoadmap:null,administration:null};
         $scope.releases = null;
         try {
             $scope.releases = response.data.releaseDetails;
+			$("select").trigger("change");
         } catch (err) {
             $scope.error = response.data;
         }
     });
-    $http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report').then(function(response) {
+/*    $http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report').then(function(response) {
         $scope.report = null;
         try {
             $scope.report = response.data;
         } catch (err) {}
     });
-
+*/
 	$scope.getAdminDetails = function() {
-		$http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report/administration/release/' + $scope.selectedAdministrationReleaseId).then(function(response) {
+		$http.get(config.apiURL + 'releaseDependencyMgmt/summary/report/administration/release/' + $scope.selectedAdministrationReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.report.administration);
 		        $scope.report.administration = response.data;
@@ -26,7 +28,7 @@ DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
 	};
 
 	$scope.getDeliveryRoadmap = function() {
-		$http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report/deliveryroadmap/release/' + $scope.selectedDeliveryRoadmapReleaseId).then(function(response) {
+		$http.get(config.apiURL + 'releaseDependencyMgmt/summary/report/deliveryroadmap/release/' + $scope.selectedDeliveryRoadmapReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.report.deliveryRoadmap);
 		        $scope.report.deliveryRoadmap = response.data;
@@ -36,7 +38,7 @@ DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
 	};
 
 	$scope.getResourceAllocation = function() {
-		$http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report/resourceallocation/release/' + $scope.selectedResourceAllocationReleaseId).then(function(response) {
+		$http.get(config.apiURL + 'releaseDependencyMgmt/summary/report/resourceallocation/release/' + $scope.selectedResourceAllocationReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.report.resourceAllocation);
 		        $scope.report.resourceAllocation = response.data;
@@ -46,7 +48,7 @@ DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
 	};
 
 	$scope.getDependencyRelationship = function() {
-		$http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report/dependencyrelationship/release/' + $scope.selectedDependencyRelationshipReleaseId).then(function(response) {
+		$http.get(config.apiURL + 'releaseDependencyMgmt/summary/report/dependencyrelationship/release/' + $scope.selectedDependencyRelationshipReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.report.dependencyRelationshipManagement);
 		        $scope.report.dependencyRelationshipManagement = response.data;
@@ -56,7 +58,7 @@ DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
 	};
 
 	$scope.getDependencyByService = function() {
-		$http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report/dependencybyservice/release/' + $scope.selectedDependencyByServiceReleaseId).then(function(response) {
+		$http.get(config.apiURL + 'releaseDependencyMgmt/summary/report/dependencybyservice/release/' + $scope.selectedDependencyByServiceReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.report.dependencyByService);
 		        $scope.report.dependencyByService = response.data;
@@ -67,7 +69,7 @@ DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
 
 
 	$scope.getReleaseDependencyManagement = function() {
-		$http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/summary/report/dependencymetric/release/' + $scope.selectedReleaseDependencyManagementReleaseId).then(function(response) {
+		$http.get(config.apiURL + 'releaseDependencyMgmt/summary/report/dependencymetric/release/' + $scope.selectedReleaseDependencyManagementReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.report.dependencyMetric);
 		        $scope.report.dependencyMetric = response.data;
@@ -79,4 +81,5 @@ DMTApp.controller('relDepMgtController', function($scope, $http, $location) {
     $scope.go = function(path) {
         $location.path(path);
     };
+
 });
