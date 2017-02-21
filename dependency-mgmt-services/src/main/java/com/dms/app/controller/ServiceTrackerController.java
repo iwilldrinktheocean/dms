@@ -14,6 +14,7 @@ import com.dms.app.response.tracker.ProjectTrackResponse;
 import com.dms.app.response.tracker.ProjectDetailResponse;
 import com.dms.app.response.tracker.ServiceNamesResponse;
 import com.dms.app.response.tracker.ServiceRequirementResponse;
+import com.dms.app.response.tracker.ServiceTrackerDetailResponse;
 import com.dms.app.service.ServiceTrackerService;
 import com.dms.model.ServiceResponseStatus;
 
@@ -201,6 +202,28 @@ public class ServiceTrackerController {
 		}
 		
 		logger.info("End getProductActReqAcrossAllServices ");
+		return requirements;
+	}
+	
+	@RequestMapping(value = "/dependency/service/tracker/detail", method = RequestMethod.GET)
+	public ServiceTrackerDetailResponse getTotalProjectsAndReqOrCapabilities(@RequestParam("releaseId") String releaseId,
+			@RequestParam("serviceID") String serviceID) {
+		logger.info("Start getTotalProjectsAndReqOrCapabilities ");
+		
+		ServiceTrackerDetailResponse requirements = new ServiceTrackerDetailResponse();
+		try {
+			requirements.setServiceTrackerDetail(serviceTrackerService.getTotalProjectsAndReqOrCapabilities(releaseId, serviceID));
+			requirements.setStatus(ServiceResponseStatus.SUCCESS);
+			requirements.setMessage(ServiceResponseStatus.SUCCESS.name());
+			requirements.setDescription(ServiceResponseStatus.SUCCESS.name());
+		} catch (Exception e) {
+			logger.debug(e);
+			requirements.setStatus(ServiceResponseStatus.FAILURE);
+			requirements.setMessage("Unable get TotalProjectsAndReqOrCapabilities");
+			requirements.setDescription(e.getMessage());
+		}
+		
+		logger.info("End getProductActRegetTotalProjectsAndReqOrCapabilitiesqAcrossAllServices ");
 		return requirements;
 	}
 
