@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import com.dms.app.response.BaseResponse;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class ProjectRelationshipBuilderResponse extends BaseResponse {
@@ -16,7 +16,7 @@ public class ProjectRelationshipBuilderResponse extends BaseResponse {
 	private Long noOfApplications = 961L;
 	private BigDecimal totalAppCost = new BigDecimal(379826);
 	private BigDecimal totalAppSavings = new BigDecimal(379);
-	private Long totalFTE = 950L; // TODO what is FTE, check data type
+	private Long totalFTE = 950L; 
 	/**
 	 * @return the noOfApplications
 	 */

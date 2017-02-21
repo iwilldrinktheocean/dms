@@ -3,6 +3,8 @@
  */
 package com.dms.app.controller;
 
+import javax.ws.rs.PathParam;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +22,7 @@ import com.dms.app.service.DependencyRelationshipService;
 import com.dms.model.ServiceResponseStatus;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 @RestController
@@ -52,9 +54,7 @@ public class DependencyRelationshipBuilderController {
 		return depEndencyRelationshipReport;
 	}
 	
-	/*@GET
-	@Path("/summary/relationship/capability/release/{releaseNum}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/summary/relationship/capability/release/{releaseNum}", method = RequestMethod.GET)
 	public CapabilityRelationshipBuilderResponse getCapabilityRelationship(@PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getCapabilityRelationship ");
 
@@ -75,9 +75,7 @@ public class DependencyRelationshipBuilderController {
 		return capabilityRelationshipBuilder;
 	}
 	
-	@GET
-	@Path("/summary/relationship/application/release/{releaseNum}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/summary/relationship/application/release/{releaseNum}", method = RequestMethod.GET)
 	public AppRelationshipBuilderResponse getApplicationRelationship(@PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getApplicationRelationship ");
 
@@ -98,9 +96,7 @@ public class DependencyRelationshipBuilderController {
 		return appRelationshipBuilder;
 	}
 	
-	@GET
-	@Path("/summary/relationship/release/{releaseNum}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/summary/relationship/release/{releaseNum}", method = RequestMethod.GET)
 	public ReleaseRelationshipBuilderResponse getReleaseRelationship(@PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getReleaseRelationship ");
 
@@ -121,9 +117,7 @@ public class DependencyRelationshipBuilderController {
 		return releaseRelationshipBuilder;
 	}
 	
-	@GET
-	@Path("/summary/relationship/process/release/{releaseNum}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/summary/relationship/process/release/{releaseNum}", method = RequestMethod.GET)
 	public ProcessRelationshipBuilderResponse getProcessRelationship(@PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getProcessRelationship ");
 
@@ -144,9 +138,7 @@ public class DependencyRelationshipBuilderController {
 		return processRelationshipBuilder;
 	}
 	
-	@GET
-	@Path("/summary/relationship/project/release/{releaseNum}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/summary/relationship/project/release/{releaseNum}", method = RequestMethod.GET)
 	public ProjectRelationshipBuilderResponse getProjectRelationship(@PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getProjectRelationship ");
 
@@ -167,9 +159,7 @@ public class DependencyRelationshipBuilderController {
 		return projectRelationshipBuilder;
 	}
 	
-	@GET
-	@Path("/summary/relationship/services/release/{releaseNum}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/summary/relationship/services/release/{releaseNum}", method = RequestMethod.GET)
 	public ServiceRelationshipBuilderResponse getServicesRelationship(@PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getServicesRelationship ");
 
@@ -188,5 +178,5 @@ public class DependencyRelationshipBuilderController {
 		}
 		logger.info("End of getServicesRelationship ");
 		return serviceRelationshipBuilder;
-	}*/
+	}
 }

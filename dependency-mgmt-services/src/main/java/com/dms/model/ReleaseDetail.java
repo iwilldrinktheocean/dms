@@ -6,7 +6,7 @@ package com.dms.model;
 import java.util.Date;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class ReleaseDetail {

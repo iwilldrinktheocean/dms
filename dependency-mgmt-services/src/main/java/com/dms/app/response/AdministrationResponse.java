@@ -6,7 +6,7 @@ package com.dms.app.response;
 import java.math.BigDecimal;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class AdministrationResponse extends BaseResponse  {

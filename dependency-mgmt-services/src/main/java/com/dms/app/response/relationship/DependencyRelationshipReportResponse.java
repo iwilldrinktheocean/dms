@@ -6,7 +6,7 @@ package com.dms.app.response.relationship;
 import com.dms.app.response.BaseResponse;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class DependencyRelationshipReportResponse extends BaseResponse {

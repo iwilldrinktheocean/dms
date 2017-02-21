@@ -5,7 +5,7 @@ package com.dms.app.response;
 
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class ReleaseDependencyReportResponse extends BaseResponse{

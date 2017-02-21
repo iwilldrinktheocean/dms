@@ -8,7 +8,7 @@ import java.util.List;
 import com.dms.model.ReleaseDetail;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class ReleasesResponse extends BaseResponse {

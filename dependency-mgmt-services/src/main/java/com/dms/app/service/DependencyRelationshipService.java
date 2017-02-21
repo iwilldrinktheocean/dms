@@ -13,7 +13,7 @@ import com.dms.app.response.relationship.ReleaseRelationshipBuilderResponse;
 import com.dms.app.response.relationship.ServiceRelationshipBuilderResponse;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 @Service

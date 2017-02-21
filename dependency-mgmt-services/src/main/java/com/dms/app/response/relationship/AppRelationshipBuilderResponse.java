@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import com.dms.app.response.BaseResponse;
 
 /**
- * @author PWC
+ * @author Richa Prasad
  *
  */
 public class AppRelationshipBuilderResponse extends BaseResponse {
