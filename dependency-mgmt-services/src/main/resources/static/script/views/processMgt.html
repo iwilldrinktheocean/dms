@@ -1,0 +1,315 @@
+<div class="process-mgt" ng-controller="ProcessMgtController">
+    <h5 class="header content-title">
+        <i class="fa fa-arrow-left" aria-hidden="true" ng-click="go('/administration' )"></i>&nbsp;&nbsp;{{title}}
+    </h5>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Main Counters</div>
+                <div class="panel-body" id="cap-chart-block">
+                    <div class="row">
+                        <div class="col-md-2 col-md-offset-1">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="app-with-relationship"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Number of Process with Relationships</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2 ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="tot-completed-application"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number Of Completed Process</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2  ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="app-assigned-cost"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number of Process Aligned with Release</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2  ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="app-alligned-release"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number of Process Aligned with Release</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2  ">
+                            <div class="panel panel-default no-margin no-border">
+                                <div class="panel-body no-border">
+                                    <div id="canvas-holder" class="cap-mgt-chart">
+                                        <canvas id="app-in-production"></canvas>
+                                    </div>
+                                    <div class="cap-mgt-chart-bottom-text">Total Number of Process in Production</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-heading adjusted-panel-heading">Activities Administration</div>
+            <div class="row" id="cap-adctivity-admin">
+                <!-- Left Panel Start -->
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default   padding-around--x-small" id="app-data-table-block">
+                                <div class="panel-body no-border">
+                                    <table class="table table-striped" id="appMgtDataTable">
+                                        <thead>
+                                            <th>AppID</th>
+                                            <th>Process</th>
+                                            <th>Last Updated</th>
+                                            <th>Cap. Cnt</th>
+                                            <th>App. Cnt</th>
+                                            <th>Release</th>
+                                            <th>Owner</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>App1</td>
+                                                <td>11/2/2016</td>
+                                                <td>10</td>
+                                                <td>3</td>
+                                                <td>1610</td>
+                                                <td>Customer Care</td>
+                                            </tr>
+                                            <tr>
+                                                <td>002</td>
+                                                <td>App1</td>
+                                                <td>11/2/2016</td>
+                                                <td>10</td>
+                                                <td>3</td>
+                                                <td>1610</td>
+                                                <td>Customer Care</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default no-margin padding-around--x-small">
+                                <div class="panel-body no-border">
+                                    <div class="cap-form-row padding-top-none border-bottom">
+                                        <div class="">
+                                            <form class="form-inline">
+                                                <div class="form-group">
+                                                    <label for="app-drop-down">Process:</label>
+                                                    <select class="form-control" id="app-drop-down">
+                                                        <option>App</option>
+                                                        <option>App</option>
+                                                        <option>App</option>
+                                                        <option>App</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="owner-drop-down">Owner:</label>
+                                                    <select class="form-control" id="owner-drop-down">
+                                                        <option>Owner</option>
+                                                        <option>Owner</option>
+                                                        <option>Owner</option>
+                                                        <option>Owner</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="svccnt">Svc Cnt:</label>
+                                                    <input type="text" class="form-control" id="svccnt" size="5">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="capcnt">Cap Cnt:</label>
+                                                    <input type="text" class="form-control" id="capcnt" size="5">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="projcnt">Proj Cnt:</label>
+                                                    <input type="text" class="form-control" id="projcnt" size="5">
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class=" row remove-row-margin-top ">
+                                            <form class="form-inline ">
+                                                <div class="form-group col-md-3 ">
+                                                    <label for="appid">AppID</label>
+                                                    <input type="text" class="form-control" id="appid" size="7">
+                                                </div>
+                                                <div class="form-group col-md-9 padding-right-none">
+                                                    <label for="process" class="col-md-2 padding-top--xx-small" style="text-align: right">Process</label>
+                                                    <div class="col-md-10">
+                                                        <textarea class="form-control" rows="2" style="width:100%"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="cap-form-row  border-bottom">
+                                        <div class="row ">
+                                            <form class="form-inline ">
+                                                <div class="form-group col-md-3 ">
+                                                    <label for="appid">Alt AppID</label>
+                                                    <input type="text" class="form-control" id="altappid" size="7">
+                                                </div>
+                                                <div class="form-group col-md-9 padding-right-none">
+                                                    <label for="process" class="col-md-3 padding-top--xx-small" style="text-align: right">App. MetaData</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" id="altappid" style="width: 100%">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="cap-form-row padding-bottom-none">
+                                        <div class="row">
+                                            <div class="col-md-10 padding-bottom-none">
+                                                <div class=" row">
+
+                                                    <div class="col-md-3 padding-right-none ">
+                                                        <label for="sel1" class="display-block">Projects</label>
+                                                        <select class="form-control" id="projects" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                                    </div>
+                                                    <div class="col-md-3 padding-right-none ">
+                                                        <label for="sel1" class="display-block">Releases</label>
+                                                        <select class="form-control" id="releases" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                                    </div>
+                                                    <div class=" col-md-3 padding-right-none">
+                                                        <label for="sel1" class="display-block">Services</label>
+                                                        <select class="form-control" id="services" multiple>
+                                                    <option>Item One</option>
+                                                    <option>Item Two</option>
+                                                    <option>Item Three</option>
+                                                    <option>Item Four</option>
+                                                    <option>Item Five</option>
+                                                    <option>Item Six</option>
+                                                </select>
+                                                    </div>
+
+                                                    <div class=" col-md-3 padding-right-none" id="application-status-block">
+                                                        <div>
+                                                            <input type="radio" name="status" value="Active" id="activeId" class="" />
+                                                            <label for="" class="">Active</label>
+
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" name="status" value="Inactive" id="activeId" class="" />
+                                                            <label for="" class="">In active</label>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-primary display-block width-100 margin-vertical--x-small" id="update">Update</button>
+                                                <button type="button" class="btn btn-primary display-block width-100 margin-vertical--x-small" id="refresh">Refresh</button>
+                                                <button type="button" class="btn btn-primary display-block width-100 margin-vertical--x-small" id="export">Export</button>
+                                                <button type="button" class="btn btn-default display-block width-100 margin-top--x-small" id="cancel">Cancel</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left Panel End -->
+                <!-- Right Panel Start -->
+                <div class="col-md-3">
+                    <div class="panel panel-default no-margin padding-around--x-small">
+                        <div class="panel-body no-border">
+                            <div class="cap-form-row padding-top-none border-bottom">
+                                <label class="bolder-text">Search Process</label>
+                                <select multiple class="form-control" id="result-application" style="height: 280px;">
+                                    <option>Process 1</option>
+                                    <option>Process 2</option>
+                                    <option>Process 3</option>
+                                    <option>Process 4</option>
+                                    <option>Process 5</option>
+                                    <option>Process 6</option>
+                                    <option>Process 7</option>
+                                    <option>Process 8</option>
+                                </select>
+                            </div>
+                            <div class="cap-form-row">
+                                <div>
+                                    <label class="bolder-text">Search Filter</label>
+                                    <div class="">
+                                        <label class="radio-inline"><input type="radio" name="filter-cr-radio">CR</label>
+                                        <label class="radio-inline"><input type="radio" name="filter-gap-radio">Gap</label>
+                                        <label class="radio-inline"><input type="radio" name="filter-kd-radio">KD</label>
+                                    </div>
+                                </div>
+
+                                <div class="margin-top--xx-large">
+                                    <label class="bolder-text">Primary Owner</label>
+                                    <div class="">
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-all">All</label>
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-business">Business</label>
+                                    </div>
+                                    <div class="">
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-application">Process</label>
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-network">Network</label>
+                                    </div>
+                                </div>
+
+                                <div class="margin-top--xx-large">
+                                    <label class="bolder-text">Secondary Type</label>
+                                    <div class="">
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-all">All</label>
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-business">Interface</label>
+                                    </div>
+                                    <div class="bolder-text">
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-application">Microservice</label>
+                                        <label class="radio-inline"><input type="radio" name="filter-primary-network">Business</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Panel End -->
+            </div>
+        </div>
+    </div>
+</div>
