@@ -1,4 +1,4 @@
-DMTApp.controller("ProcessMgtController", function($scope, $location) {
+DMTApp.controller("ProcessMgtController", function($scope, $location,config) {
     $scope.title = "Process Management";
     $scope.totalNoProcess = "18K";
     $scope.totalNoCompProcess = 729;

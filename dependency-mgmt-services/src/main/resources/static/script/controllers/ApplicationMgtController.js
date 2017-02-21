@@ -1,4 +1,4 @@
-DMTApp.controller("ApplicationMgtController", function($scope, $location) {
+DMTApp.controller("ApplicationMgtController", function($scope, $location,,config) {
     $scope.title = "Application Management";
     $scope.totalNoApplication = "18K";
     $scope.totalNoCompApplication = 729;

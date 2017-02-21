@@ -1,4 +1,4 @@
-DMTApp.controller('capMgtController', function($scope, $http, $location) {
+DMTApp.controller('capMgtController', function($scope, $http, $location,config) {
     $scope.title = "Capability Management";
     $scope.totalNoCapability = "18K";
     $scope.totalNoCompCapability = 729;

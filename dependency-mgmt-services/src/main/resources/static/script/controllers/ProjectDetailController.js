@@ -1,4 +1,4 @@
-DMTApp.controller('ProjectDetailController', function($scope, $http, $location) {
+DMTApp.controller('ProjectDetailController', function($scope, $http, $location,config) {
 
     var projectStatusData = {
         type: 'doughnut',

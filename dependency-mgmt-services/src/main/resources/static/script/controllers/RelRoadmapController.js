@@ -1,4 +1,4 @@
-DMTApp.controller('relRoadmapController', function($scope, $http, $location) {
+DMTApp.controller('relRoadmapController', function($scope, $http, $location,config) {
     $scope.title = "As a software developer, I've always loved to build things...";
 	$scope.releases = null;
     $http.get(config.apiURL + 'releaseDependencyMgmt/releases').then(function(response) {

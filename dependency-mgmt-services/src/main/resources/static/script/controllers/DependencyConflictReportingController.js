@@ -1,5 +1,5 @@
-DMTApp.controller('dependencyConflictReportingController', function($scope, $http, $location) {
-    $http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/releases').then(function(response) {
+DMTApp.controller('dependencyConflictReportingController', function($scope, $http, $location,config) {
+    $http.get(config.apiURL +'releaseDependencyMgmt/releases').then(function(response) {
         $scope.releases = null;
         try {
             $scope.releases = response.data.releaseDetails;

@@ -1,4 +1,4 @@
-DMTApp.controller('capabilityDepMgtController', function($scope, $http, $location) {
+DMTApp.controller('capabilityDepMgtController', function($scope, $http, $location,config) {
     $scope.title = "Capability Dependency Management";
     $('#queryresultstable').dataTable({
         "bFilter": false,

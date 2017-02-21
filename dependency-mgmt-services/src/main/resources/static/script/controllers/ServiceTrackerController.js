@@ -1,4 +1,4 @@
-DMTApp.controller('serviceTrackerController', function($scope, $http, $location) {
+DMTApp.controller('serviceTrackerController', function($scope, $http, $location,config) {
     $scope.title = "Service Tracker";
     $scope.go = function(path) {
         $location.path(path);

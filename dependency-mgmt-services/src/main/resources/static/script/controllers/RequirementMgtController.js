@@ -1,4 +1,4 @@
-DMTApp.controller("RequirementMgtController", function($scope, $location) {
+DMTApp.controller("RequirementMgtController", function($scope, $location,config) {
     $scope.title = "Requirement Management";
     $scope.totalNoRequirement = "18K";
     $scope.totalNoCompRequirement = 729;
