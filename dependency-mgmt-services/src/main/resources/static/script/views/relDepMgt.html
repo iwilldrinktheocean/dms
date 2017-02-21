@@ -40,9 +40,14 @@
 							<div class="col-sm-8">
 								<div class="form-group panelalign-select">
 					            <label class="panelselect-header">SELECT RELEASE</label>
-								<select class="input-large form-control selectstyle" ng-model="selectedReleaseDependencyManagementReleaseId" ng-change="getReleaseDependencyManagement()">
+
+ 								<select class="input-large form-control selectstyle hidden" ng-model="selectedReleaseDependencyManagementReleaseId">
+								</select>
+
+ 								<select class="input-large form-control selectstyle" ng-model="selectedReleaseDependencyManagementReleaseId" ng-change="getReleaseDependencyManagement()">
 								<option ng-repeat="release in releases" value="{{release.releaseId}}">{{release.releaseDesc}}</option>
 								</select>
+
 								</div>
 							</div>
 							<div class="col-sm-4 text-center">

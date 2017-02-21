@@ -1,0 +1,155 @@
+<div id="project-details-block" ng-controller="ProjectDetailController" ng-init="LoadData()">
+    <h5 class=" header content-title ">
+        <i class="fa fa-arrow-left " aria-hidden="true " ng-click="go( '/relDepMgt') "></i>&nbsp;&nbsp;Release Roadmap
+    </h5>
+    <div class="row ">
+        <div class="col-md-9 " id="leftpanel ">
+            <div class="panel panel-default padding-around--x-small">
+                <div class="panel-heading ">Project Details</div>
+                <div class="panel-body no-border">
+                    <div class="cap-form-row">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="projectid">Project ID</label>
+                                <select class="form-control" name="projectid">
+                                    <option>PB 301</option>
+                                    <option>PB 301</option>
+                                    <option>PB 301</option>
+                                    <option>PB 301</option>
+                                </select>
+                            </div>
+                            <div class="form-group margin-left--xx-large">
+                                <label for="release">Project ID</label>
+                                <input type="text" class="form-control" name="release" id="release" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="cap-form-row border-bottom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#tabdescription">Description</a></li>
+                            <li><a data-toggle="tab" href="#tabcomments">Other Comments/History</a></li>
+                        </ul>
+                        <div class="tab-content" id="tab-project-detail">
+                            <div id="tabdescription" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-md-8 ">
+                                        <div class="cap-form-row">
+                                            <label for="project-desc">Project Description</label>
+                                            <textarea style="width: 90%" rows="5" id="project-desc" name="project-desc" id="project-desc"></textarea>
+                                        </div>
+                                        <div class="cap-form-row">
+                                            <label for="project-desc" for="comments">Status / Comments</label>
+                                            <textarea style="width: 90%" rows="5" name="comments" id="comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="margin-top--xxx-large">
+                                            <label for="project-desc" class="display-block text-center">Project Status</label>
+                                            <div id="canvas-holder" class="project-status-chart margin-top--xxx-large">
+                                                <canvas id="project-status"></canvas>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tabcomments" class="tab-pane fade in">
+                                Tab Comments
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cap-form-row ">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <table class="table table-striped" id="relProjectTable">
+                                    <thead>
+                                        <th>Project</th>
+                                        <th>Description</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PD595</td>
+                                            <td>Place Description</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PD595</td>
+                                            <td>Place Description</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PD595</td>
+                                            <td>Place Description</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PD595</td>
+                                            <td>Place Description</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-striped" id="impactedApplication">
+                                    <thead>
+                                        <th>Application</th>
+                                        <th>Development Type</th>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>System 1</td>
+                                            <td>Code</td>
+                                        </tr>
+                                        <tr>
+                                            <td>System 1</td>
+                                            <td>Code</td>
+                                        </tr>
+                                        <tr>
+                                            <td>System 1</td>
+                                            <td>Code</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3 " id="rightpanel ">
+            <div class="panel panel-default padding-around--x-small ">
+                <div class="panel-heading ">Release Status</div>
+                <div class="panel-body no-border ">
+                    <div class="cap-form-row">
+                        <label for="sel1" class="display-block">Projects</label>
+                        <select class="form-control" id="projects" multiple style="height: 450px">
+                            <option>Item One</option>
+                            <option>Item Two</option>
+                            <option>Item Three</option>
+                            <option>Item Four</option>
+                            <option>Item Five</option>
+                            <option>Item Six</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        window.onload = function() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            var ctx1 = document.getElementById("release-chart-area ").getContext("2d ");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            window.myDoughnut = new Chart(ctx1, config1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            var ctx2 = document.getElementById("budget-tracking-chart-area ").getContext("2d ");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            window.myDoughnut = new Chart(ctx2, config2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            var ctx3 = document.getElementById("known-gaps-chart-area ").getContext("2d ");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            window.myDoughnut = new Chart(ctx3, config3);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            var ctx4 = document.getElementById("resource-allocation-chart-area ").getContext("2d ");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            window.myDoughnut = new Chart(ctx4, config4);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            $("#leftpanel ").height($("#rightpanel ").height() - 50 + "px ");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */
+</script>

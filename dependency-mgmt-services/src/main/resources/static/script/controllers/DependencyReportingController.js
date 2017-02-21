@@ -1,10 +1,11 @@
-DMTApp.controller('dependencyReportingController', function($scope, $http, $location) {
+DMTApp.controller('dependencyReportingController', function($scope, $http, $location,config) {
     $scope.title = "Dependency Reporting";
-    $scope.metrics=null;
-    $http.get('http://localhost:8080/dependency-mgmt-services/releaseDependencyMgmt/releases').then(function(response) {
+    $scope.metrics={dynamicReporting:null,budgetReporting:null,FTEAllocationReporting:null,conflictReporting:null,projectReporting:null,requirementsReporting:null};
+    $http.get(config.apiURL + 'releaseDependencyMgmt/releases').then(function(response) {
         $scope.releases = null;
         try {
             $scope.releases = response.data.releaseDetails;
+			$("select").trigger("change");
         } catch (err) {
             $scope.error = response.data;
         }
@@ -12,7 +13,7 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
 
 	$scope.getDynamicReporting=function()
 	{
-		$http.get('http://localhost:8080/dependency-mgmt-services/dependencyMetricMgmt/summary/report/dynamicreporting/release/' + $scope.selectedDynamicReportingReleaseId).then(function(response) {
+		$http.get(config.apiURL +'dependencyMetricMgmt/summary/report/dynamicreporting/release/' + $scope.selectedDynamicReportingReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.metrics.dynamicReporting);
 		        $scope.metrics.dynamicReporting = response.data;
@@ -23,7 +24,7 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
 
 	$scope.getBudgetReporting=function()
 	{
-		$http.get('http://localhost:8080/dependency-mgmt-services/dependencyMetricMgmt/summary/report/budgetreporting/release/' + $scope.selectedBudgetReportingReleaseId).then(function(response) {
+		$http.get(config.apiURL +'dependencyMetricMgmt/summary/report/budgetreporting/release/' + $scope.selectedBudgetReportingReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.metrics.budgetReporting);
 		        $scope.metrics.budgetReporting = response.data;
@@ -34,7 +35,7 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
 
 	$scope.getFTEAllocationReporting=function()
 	{
-		$http.get('http://localhost:8080/dependency-mgmt-services/dependencyMetricMgmt/summary/report/fteallocation/release/' + $scope.selectedFTEAllocationReportingReleaseId).then(function(response) {
+		$http.get(config.apiURL +'dependencyMetricMgmt/summary/report/fteallocation/release/' + $scope.selectedFTEAllocationReportingReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.metrics.FTEAllocationReporting);
 		        $scope.metrics.FTEAllocationReporting = response.data;
@@ -45,7 +46,7 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
 
 	$scope.getDependencyConflictReporting=function()
 	{
-		$http.get('http://localhost:8080/dependency-mgmt-services/dependencyMetricMgmt/summary/report/dependencyConflict/release/' + $scope.selectedDependencyConflictReportingReleaseId).then(function(response) {
+		$http.get(config.apiURL +'dependencyMetricMgmt/summary/report/dependencyConflict/release/' + $scope.selectedDependencyConflictReportingReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.metrics.conflictReporting);
 		        $scope.metrics.conflictReporting = response.data;
@@ -56,7 +57,7 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
 
 	$scope.getProjectReporting=function()
 	{
-		$http.get('http://localhost:8080/dependency-mgmt-services/dependencyMetricMgmt/summary/report/programorprojectreporting/release/' + $scope.selectedProjectReportingReleaseId).then(function(response) {
+		$http.get(config.apiURL +'dependencyMetricMgmt/summary/report/programorprojectreporting/release/' + $scope.selectedProjectReportingReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.metrics.projectReporting);
 		        $scope.metrics.projectReporting = response.data;
@@ -67,7 +68,7 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
 
 	$scope.getRequirementsReporting=function()
 	{
-		$http.get('http://localhost:8080/dependency-mgmt-services/dependencyMetricMgmt/summary/report/capabilityORRequirements/release/' + $scope.selectedRequirementsReportingReleaseId).then(function(response) {
+		$http.get(config.apiURL +'dependencyMetricMgmt/summary/report/capabilityORRequirements/release/' + $scope.selectedRequirementsReportingReleaseId).then(function(response) {
 		    try {
 		        console.log($scope.metrics.requirementsReporting);
 		        $scope.metrics.requirementsReporting = response.data;
@@ -79,4 +80,5 @@ DMTApp.controller('dependencyReportingController', function($scope, $http, $loca
     $scope.go = function(path) {
         $location.path(path);
     };
+	
 });

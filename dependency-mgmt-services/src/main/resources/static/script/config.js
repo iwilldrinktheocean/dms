@@ -1,5 +1,6 @@
 DMTApp.constant('config', {
-    templatePath: "./script/views/"
+    templatePath: "./script/views/",
+    apiURL:"http://localhost:8080/dependency-mgmt-services/"
 })
 
 DMTApp.config(function($routeProvider, config) {
