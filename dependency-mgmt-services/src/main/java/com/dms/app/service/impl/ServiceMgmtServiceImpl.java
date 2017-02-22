@@ -16,7 +16,7 @@ import com.dms.app.response.ServiceTableMgmtSummaryResponse;
 import com.dms.app.service.ServiceMgmtService;
 
 /**
- * @author PWC
+ * @author SYAM
  *
  */
 @Service
