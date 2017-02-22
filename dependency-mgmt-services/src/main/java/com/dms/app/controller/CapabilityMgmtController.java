@@ -1,9 +1,8 @@
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +27,7 @@ public class CapabilityMgmtController {
 
 	
 	@RequestMapping(value = "/report/capabilityreporting/capability/{capabilityId}", method = RequestMethod.GET)
-	public CapabilityReportingResponse getCapabilityReporting(@PathParam("capabilityId") String capabilityId) {
+	public CapabilityReportingResponse getCapabilityReporting(@PathVariable("capabilityId") String capabilityId) {
 		LOGGER.info("start getCapabilityReporting ");
 		CapabilityReportingResponse capabilityReportingResponse=null;
 		try {

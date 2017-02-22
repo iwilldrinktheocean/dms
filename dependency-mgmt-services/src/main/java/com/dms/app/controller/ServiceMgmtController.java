@@ -3,10 +3,9 @@
  */
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +27,7 @@ public class ServiceMgmtController {
 	private ServiceMgmtService serviceMgmtService;
 	
 	@RequestMapping(value = "/report/servicemaintenancetable/release/{releaseId}", method = RequestMethod.GET)
-	public ServiceMaintenanceTableResponse getServiceMaintenanceTableReport(@PathParam("releaseId") String releaseId) {
+	public ServiceMaintenanceTableResponse getServiceMaintenanceTableReport(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getServiceMaintenanceTableReport ");
 		ServiceMaintenanceTableResponse serviceMaintenanceTableResponse = null;
 		try {

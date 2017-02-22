@@ -5,9 +5,9 @@ package com.dms.app.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dms.app.model.ServiceResponseStatus;
@@ -31,9 +31,9 @@ public class ProjectRoadmapDetailController {
 	@Autowired
 	private ProjectRoadmapDetailService projectRoadmapDetailService;
 	
-	@RequestMapping(value = "/project/roadmap/detail/project/desc", method = RequestMethod.GET)
-	public ProjectRoadmapDetailResponse getProjectDescription(@RequestParam("projectId") String projectId,
-			@RequestParam("releaseId") String releaseId) {
+	@RequestMapping(value = "/project/roadmap/detail/project/desc/release/{releaseId}/project/{projectId}", method = RequestMethod.GET)
+	public ProjectRoadmapDetailResponse getProjectDescription(@PathVariable(value = "releaseId") String releaseId,
+			@PathVariable(value = "projectId") String projectId) {
 		logger.info("Start getProjectDescription");
 		
 		ProjectRoadmapDetailResponse projectRoadmapDetail = new ProjectRoadmapDetailResponse();
@@ -52,9 +52,9 @@ public class ProjectRoadmapDetailController {
 		return projectRoadmapDetail;
 	}
 	
-	@RequestMapping(value = "/project/roadmap/detail/related/projects/list", method = RequestMethod.GET)
-	public ProjectDetailResponse getRelatedProjects(@RequestParam("projectId") String projectId,
-			@RequestParam("releaseId") String releaseId) {
+	@RequestMapping(value = "/project/roadmap/detail/related/projects/release/{releaseId}/project/{projectId}", method = RequestMethod.GET)
+	public ProjectDetailResponse getRelatedProjects(@PathVariable(value = "releaseId") String releaseId,
+			@PathVariable(value = "projectId") String projectId) {
 		logger.info("Start getRelatedProjects");
 		
 		ProjectDetailResponse projects = new ProjectDetailResponse();
@@ -73,9 +73,9 @@ public class ProjectRoadmapDetailController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/project/roadmap/detail/impacted/applications/list", method = RequestMethod.GET)
-	public ApplicationDataResponse getImpactedApplications(@RequestParam("projectId") String projectId,
-			@RequestParam("releaseId") String releaseId) {
+	@RequestMapping(value = "/project/roadmap/detail/impacted/applications/release/{releaseId}/project/{projectId}", method = RequestMethod.GET)
+	public ApplicationDataResponse getImpactedApplications(@PathVariable(value = "releaseId") String releaseId,
+			@PathVariable(value = "projectId") String projectId) {
 		logger.info("Start getImpactedApplications");
 		
 		ApplicationDataResponse appData = new ApplicationDataResponse();
@@ -94,9 +94,9 @@ public class ProjectRoadmapDetailController {
 		return appData;
 	}
 	
-	@RequestMapping(value = "/project/roadmap/detail/impacted/services/list", method = RequestMethod.GET)
-	public ServiceNamesResponse getImpactedServices(@RequestParam("projectId") String projectId,
-			@RequestParam("releaseId") String releaseId) {
+	@RequestMapping(value = "/project/roadmap/detail/impacted/services/release/{releaseId}/project/{projectId}", method = RequestMethod.GET)
+	public ServiceNamesResponse getImpactedServices(@PathVariable(value = "releaseId") String releaseId,
+			@PathVariable(value = "projectId") String projectId) {
 		logger.info("Start getImpactedServices");
 		
 		ServiceNamesResponse services = new ServiceNamesResponse();
@@ -115,9 +115,9 @@ public class ProjectRoadmapDetailController {
 		return services;
 	}
 	
-	@RequestMapping(value = "/project/roadmap/detail/other/comments/history", method = RequestMethod.GET)
-	public ProjectRoadmapHistoryResponse getOtherCommentsOrHistory(@RequestParam("projectId") String projectId,
-			@RequestParam("releaseId") String releaseId) {
+	@RequestMapping(value = "/project/roadmap/detail/other/comments/history/release/{releaseId}/project/{projectId}", method = RequestMethod.GET)
+	public ProjectRoadmapHistoryResponse getOtherCommentsOrHistory(@PathVariable(value = "releaseId") String releaseId,
+			@PathVariable(value = "projectId") String projectId) {
 		logger.info("Start getOtherCommentsOrHistory");
 		
 		ProjectRoadmapHistoryResponse history = new ProjectRoadmapHistoryResponse();

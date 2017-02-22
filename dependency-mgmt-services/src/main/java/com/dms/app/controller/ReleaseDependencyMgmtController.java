@@ -3,10 +3,9 @@
  */
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,7 +56,7 @@ public class ReleaseDependencyMgmtController {
 	}
 
 	@RequestMapping(value = "/summary/report/administration/release/{releaseNum}", method = RequestMethod.GET)
-	public AdministrationResponse getAdministrationSummary(@PathParam("releaseNum") String releaseNum) {
+	public AdministrationResponse getAdministrationSummary(@PathVariable("releaseNum") String releaseNum) {
 		LOGGER.info("start getReleaseDependencyReport ");
 		AdministrationResponse administrationResponse = null;
 		try {
@@ -80,7 +79,7 @@ public class ReleaseDependencyMgmtController {
 	
 	
 	@RequestMapping(value = "/summary/report/deliveryroadmap/release/{releaseId}", method = RequestMethod.GET)
-	public DeliveryRoadMapResponse getDeliveryRoadMapSummary(@PathParam("releaseId") String releaseId) {
+	public DeliveryRoadMapResponse getDeliveryRoadMapSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getDeliveryRoadMapSummary ");
 		DeliveryRoadMapResponse deliveryRoadMapResponse = null;
 		try {
@@ -102,7 +101,7 @@ public class ReleaseDependencyMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/resourceallocation/release/{releaseId}", method = RequestMethod.GET)
-	public ResourceAllocationResponse getResourceAllocation(@PathParam("releaseId") String releaseId) {
+	public ResourceAllocationResponse getResourceAllocation(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getResourceAllocation ");
 		ResourceAllocationResponse resourceAllocationResponse=null;
 		try {
@@ -125,7 +124,7 @@ public class ReleaseDependencyMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/dependencyrelationship/release/{releaseId}", method = RequestMethod.GET)
-	public DependencyRelationshipMgmtResponse getDependencyRelationshipMgmtSummary(@PathParam("releaseId") String releaseId) {
+	public DependencyRelationshipMgmtResponse getDependencyRelationshipMgmtSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getDependencyRelationshipMgmtSummary ");
 		DependencyRelationshipMgmtResponse dependencyRelationshipMgmtResponse=null;
 		try {
@@ -148,7 +147,7 @@ public class ReleaseDependencyMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/dependencybyservice/release/{releaseId}", method = RequestMethod.GET)
-	public DependencyByServiceResponse getDependencyByServiceSummary(@PathParam("releaseId") String releaseId) {
+	public DependencyByServiceResponse getDependencyByServiceSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getDependencyByServiceSummary ");
 		DependencyByServiceResponse dependencyByServiceResponse=null;
 		try {
@@ -172,7 +171,7 @@ public class ReleaseDependencyMgmtController {
 	
 	
 	@RequestMapping(value = "/summary/report/dependencymetric/release/{releaseId}", method = RequestMethod.GET)
-	public DependencyMetricResponse getDependencyMetricSummary(@PathParam("releaseId") String releaseId) {
+	public DependencyMetricResponse getDependencyMetricSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getDependencyMetricSummary ");
 		DependencyMetricResponse dependencyMetricResponse=null;
 		try {

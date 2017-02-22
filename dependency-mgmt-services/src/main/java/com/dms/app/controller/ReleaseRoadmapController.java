@@ -3,10 +3,9 @@
  */
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,8 +31,8 @@ public class ReleaseRoadmapController {
 	@Autowired
 	private ReleaseRoadmapService releaseRoadmapService;
 	
-	@RequestMapping(value = "/release/roadmap/details/project/activities/release/{releaseNum}", method = RequestMethod.GET)
-	public ProjectDetailResponse getProjectActivities(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/release/roadmap/details/project/activities/release/{releaseId}", method = RequestMethod.GET)
+	public ProjectDetailResponse getProjectActivities(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getProjectActivities");
 		
 		ProjectDetailResponse projects = new ProjectDetailResponse();
@@ -52,8 +51,8 @@ public class ReleaseRoadmapController {
 		return projects;
 	}
 	
-	@RequestMapping(value = "/release/roadmap/details/roadmap/progress/release/{releaseNum}", method = RequestMethod.GET)
-	public ReleaseRoadmapProgressResponse getReleaseRoadmapProgress(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/release/roadmap/details/roadmap/progress/release/{releaseId}", method = RequestMethod.GET)
+	public ReleaseRoadmapProgressResponse getReleaseRoadmapProgress(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getReleaseRoadmapProgress");
 		
 		ReleaseRoadmapProgressResponse progress = new ReleaseRoadmapProgressResponse();
@@ -72,8 +71,8 @@ public class ReleaseRoadmapController {
 		return progress;
 	}
 	
-	@RequestMapping(value = "/release/roadmap/details/release/status/release/{releaseNum}", method = RequestMethod.GET)
-	public ReleaseStatusDetailResponse getReleaseStatus(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/release/roadmap/details/release/status/release/{releaseId}", method = RequestMethod.GET)
+	public ReleaseStatusDetailResponse getReleaseStatus(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getReleaseStatus");
 		
 		ReleaseStatusDetailResponse status = new ReleaseStatusDetailResponse();
@@ -92,8 +91,8 @@ public class ReleaseRoadmapController {
 		return status;
 	}
 	
-	@RequestMapping(value = "/release/roadmap/details/known/differences/gaps/release/{releaseNum}", method = RequestMethod.GET)
-	public KnownDifferencesGapsResponse getKnownDifferencesGaps(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/release/roadmap/details/known/differences/gaps/release/{releaseId}", method = RequestMethod.GET)
+	public KnownDifferencesGapsResponse getKnownDifferencesGaps(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getKnownDifferencesGaps");
 		
 		KnownDifferencesGapsResponse knownDifferencesGaps = new KnownDifferencesGapsResponse();
@@ -112,8 +111,8 @@ public class ReleaseRoadmapController {
 		return knownDifferencesGaps;
 	}
 	
-	@RequestMapping(value = "/release/roadmap/details/budget/tracking/release/{releaseNum}", method = RequestMethod.GET)
-	public BarChartResponse getBudgetTracking(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/release/roadmap/details/budget/tracking/release/{releaseId}", method = RequestMethod.GET)
+	public BarChartResponse getBudgetTracking(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getBudgetTracking");
 		
 		BarChartResponse budgetTracking = new BarChartResponse();
@@ -132,8 +131,8 @@ public class ReleaseRoadmapController {
 		return budgetTracking;
 	}
 	
-	@RequestMapping(value = "/release/roadmap/details/resource/allocation/release/{releaseNum}", method = RequestMethod.GET)
-	public BarChartResponse getResourceAllocation(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/release/roadmap/details/resource/allocation/release/{releaseId}", method = RequestMethod.GET)
+	public BarChartResponse getResourceAllocation(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getResourceAllocation");
 		
 		BarChartResponse resourceAllocation = new BarChartResponse();

@@ -3,10 +3,9 @@
  */
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +32,7 @@ public class DependencyReportingOrMetricMgmtController {
 	private DependencyReportingOrMetricService dependencyReportingOrMetricService;
 	
 	@RequestMapping(value = "/summary/report/dynamicreporting/release/{releaseId}", method = RequestMethod.GET)
-	public DynamicReportingResponse getDynamicReportingSummary(@PathParam("releaseId") String releaseId) {
+	public DynamicReportingResponse getDynamicReportingSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getDynamicReportingSummary ");
 		DynamicReportingResponse dynamicReportingResponse=null;
 		try {
@@ -56,7 +55,7 @@ public class DependencyReportingOrMetricMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/budgetreporting/release/{releaseId}", method = RequestMethod.GET)
-	public BudgetReportingResponse getBudgetReportingSummary(@PathParam("releaseId") String releaseId) {
+	public BudgetReportingResponse getBudgetReportingSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getBudgetReportingSummary ");
 		BudgetReportingResponse budgetReportingResponse=null;
 		try {
@@ -79,7 +78,7 @@ public class DependencyReportingOrMetricMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/fteallocation/release/{releaseId}", method = RequestMethod.GET)
-	public FTERAllocationReportingResponse getFTEAllocationReportingSummary(@PathParam("releaseId") String releaseId) {
+	public FTERAllocationReportingResponse getFTEAllocationReportingSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getFTEAllocationReportingSummary ");
 		FTERAllocationReportingResponse fTERAllocationReportingResponse=null;
 		try {
@@ -103,7 +102,7 @@ public class DependencyReportingOrMetricMgmtController {
 	
 	
 	@RequestMapping(value = "/summary/report/dependencyConflict/release/{releaseId}", method = RequestMethod.GET)
-	public ConflictsReportingResponse getDependencyConflictsReportingSummary(@PathParam("releaseId") String releaseId) {
+	public ConflictsReportingResponse getDependencyConflictsReportingSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getDependencyConflictsReportingSummary ");
 		ConflictsReportingResponse conflictsReportingResponse=null;
 		try {
@@ -126,7 +125,7 @@ public class DependencyReportingOrMetricMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/programorprojectreporting/release/{releaseId}", method = RequestMethod.GET)
-	public ProgramOrProjectReportingResponse getProgramOrProjectReportingSummary(@PathParam("releaseId") String releaseId) {
+	public ProgramOrProjectReportingResponse getProgramOrProjectReportingSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getProgramOrProjectReportingSummary ");
 		ProgramOrProjectReportingResponse programOrProjectReportingResponse=null;
 		try {
@@ -149,7 +148,7 @@ public class DependencyReportingOrMetricMgmtController {
 	}
 	
 	@RequestMapping(value = "/summary/report/capabilityORRequirements/release/{releaseId}", method = RequestMethod.GET)
-	public CapabilitiesOrRequirementsReportingResponse getCapabilityOrRequirementsReportingSummary(@PathParam("releaseId") String releaseId) {
+	public CapabilitiesOrRequirementsReportingResponse getCapabilityOrRequirementsReportingSummary(@PathVariable("releaseId") String releaseId) {
 		LOGGER.info("start getCapabilityOrRequirementsReportingSummary ");
 		CapabilitiesOrRequirementsReportingResponse capabilitiesOrRequirementsReportingResponse=null;
 		try {

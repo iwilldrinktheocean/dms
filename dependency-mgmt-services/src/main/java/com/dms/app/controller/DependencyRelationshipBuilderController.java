@@ -3,10 +3,9 @@
  */
 package com.dms.app.controller;
 
-import javax.ws.rs.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -54,8 +53,8 @@ public class DependencyRelationshipBuilderController {
 		return depEndencyRelationshipReport;
 	}
 	
-	@RequestMapping(value = "/summary/relationship/capability/release/{releaseNum}", method = RequestMethod.GET)
-	public CapabilityRelationshipBuilderResponse getCapabilityRelationship(@javax.websocket.server.PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/relationship/capability/release/{releaseId}", method = RequestMethod.GET)
+	public CapabilityRelationshipBuilderResponse getCapabilityRelationship(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getCapabilityRelationship ");
 
 		CapabilityRelationshipBuilderResponse capabilityRelationshipBuilder = null;
@@ -75,8 +74,8 @@ public class DependencyRelationshipBuilderController {
 		return capabilityRelationshipBuilder;
 	}
 	
-	@RequestMapping(value = "/summary/relationship/application/release/{releaseNum}", method = RequestMethod.GET)
-	public AppRelationshipBuilderResponse getApplicationRelationship(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/relationship/application/release/{releaseId}", method = RequestMethod.GET)
+	public AppRelationshipBuilderResponse getApplicationRelationship(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getApplicationRelationship ");
 
 		AppRelationshipBuilderResponse appRelationshipBuilder = null;
@@ -96,8 +95,8 @@ public class DependencyRelationshipBuilderController {
 		return appRelationshipBuilder;
 	}
 	
-	@RequestMapping(value = "/summary/relationship/release/{releaseNum}", method = RequestMethod.GET)
-	public ReleaseRelationshipBuilderResponse getReleaseRelationship(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/relationship/release/{releaseId}", method = RequestMethod.GET)
+	public ReleaseRelationshipBuilderResponse getReleaseRelationship(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getReleaseRelationship ");
 
 		ReleaseRelationshipBuilderResponse releaseRelationshipBuilder = null;
@@ -117,8 +116,8 @@ public class DependencyRelationshipBuilderController {
 		return releaseRelationshipBuilder;
 	}
 	
-	@RequestMapping(value = "/summary/relationship/process/release/{releaseNum}", method = RequestMethod.GET)
-	public ProcessRelationshipBuilderResponse getProcessRelationship(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/relationship/process/release/{releaseId}", method = RequestMethod.GET)
+	public ProcessRelationshipBuilderResponse getProcessRelationship(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getProcessRelationship ");
 
 		ProcessRelationshipBuilderResponse processRelationshipBuilder = null;
@@ -138,8 +137,8 @@ public class DependencyRelationshipBuilderController {
 		return processRelationshipBuilder;
 	}
 	
-	@RequestMapping(value = "/summary/relationship/project/release/{releaseNum}", method = RequestMethod.GET)
-	public ProjectRelationshipBuilderResponse getProjectRelationship(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/relationship/project/release/{releaseId}", method = RequestMethod.GET)
+	public ProjectRelationshipBuilderResponse getProjectRelationship(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getProjectRelationship ");
 
 		ProjectRelationshipBuilderResponse projectRelationshipBuilder = null;
@@ -159,8 +158,8 @@ public class DependencyRelationshipBuilderController {
 		return projectRelationshipBuilder;
 	}
 	
-	@RequestMapping(value = "/summary/relationship/services/release/{releaseNum}", method = RequestMethod.GET)
-	public ServiceRelationshipBuilderResponse getServicesRelationship(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/relationship/services/release/{releaseId}", method = RequestMethod.GET)
+	public ServiceRelationshipBuilderResponse getServicesRelationship(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getServicesRelationship ");
 
 		ServiceRelationshipBuilderResponse serviceRelationshipBuilder = null;

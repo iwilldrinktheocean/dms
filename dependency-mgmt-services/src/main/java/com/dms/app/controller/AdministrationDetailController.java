@@ -3,10 +3,9 @@
  */
 package com.dms.app.controller;
 
-import javax.websocket.server.PathParam;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,8 +31,8 @@ public class AdministrationDetailController {
 	@Autowired
 	private AdministrationDetailService administrationDetailService;
 	
-	@RequestMapping(value = "/summary/administration/detail/capability/release/{releaseNum}", method = RequestMethod.GET)
-	public CapabilitiesAdministrationResponse getCapabilityAdministrationDetail(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/administration/detail/capability/release/{releaseId}", method = RequestMethod.GET)
+	public CapabilitiesAdministrationResponse getCapabilityAdministrationDetail(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getCapabilityAdministrationDetail ");
 
 		CapabilitiesAdministrationResponse capabilitiesAdministration = null;
@@ -53,8 +52,8 @@ public class AdministrationDetailController {
 		return capabilitiesAdministration;
 	}
 	
-	@RequestMapping(value = "/summary/administration/detail/application/release/{releaseNum}", method = RequestMethod.GET)
-	public ApplicationAdministrationResponse getApplicationAdministrationDetail(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/administration/detail/application/release/{releaseId}", method = RequestMethod.GET)
+	public ApplicationAdministrationResponse getApplicationAdministrationDetail(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getApplicationAdministrationDetail ");
 
 		ApplicationAdministrationResponse applicationAdministration = null;
@@ -74,8 +73,8 @@ public class AdministrationDetailController {
 		return applicationAdministration;
 	}
 	
-	@RequestMapping(value = "/summary/administration/detail/process/release/{releaseNum}", method = RequestMethod.GET)
-	public ProcessAdministrationResponse getProcessAdministrationDetail(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/administration/detail/process/release/{releaseId}", method = RequestMethod.GET)
+	public ProcessAdministrationResponse getProcessAdministrationDetail(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getProcessAdministrationDetail ");
 
 		ProcessAdministrationResponse processAdministration = null;
@@ -95,8 +94,8 @@ public class AdministrationDetailController {
 		return processAdministration;
 	}
 	
-	@RequestMapping(value = "/summary/administration/detail/requirements/release/{releaseNum}", method = RequestMethod.GET)
-	public RequirementsAdministrationResponse getRequirementsAdministrationDetail(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/administration/detail/requirements/release/{releaseId}", method = RequestMethod.GET)
+	public RequirementsAdministrationResponse getRequirementsAdministrationDetail(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getRequirementsAdministrationDetail ");
 
 		RequirementsAdministrationResponse requirementsAdministration = null;
@@ -116,8 +115,8 @@ public class AdministrationDetailController {
 		return requirementsAdministration;
 	}
 	
-	@RequestMapping(value = "/summary/administration/resource/management/release/{releaseNum}", method = RequestMethod.GET)
-	public ResourceManagementResponse getResourceMgmtAdministrationDetail(@PathParam("releaseNum") String releaseNum) {
+	@RequestMapping(value = "/summary/administration/resource/management/release/{releaseId}", method = RequestMethod.GET)
+	public ResourceManagementResponse getResourceMgmtAdministrationDetail(@PathVariable("releaseId") String releaseNum) {
 		logger.info("Start getResourceMgmtAdministrationDetail ");
 
 		ResourceManagementResponse resourceMgmtAdministration = null;
