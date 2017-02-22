@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.dms.model;
+package com.dms.app.model;
 
 import java.util.Date;
 

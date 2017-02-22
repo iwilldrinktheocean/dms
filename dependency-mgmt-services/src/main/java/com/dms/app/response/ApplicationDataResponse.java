@@ -5,7 +5,7 @@ package com.dms.app.response;
 
 import java.util.List;
 
-import com.dms.model.ApplicationData;
+import com.dms.app.model.ApplicationData;
 
 /**
  * @author Richa Prasad

@@ -3,7 +3,7 @@
  */
 package com.dms.app.response;
 
-import com.dms.model.ServiceTrackerDetail;
+import com.dms.app.model.ServiceTrackerDetail;
 
 /**
  * @author Richa Prasad

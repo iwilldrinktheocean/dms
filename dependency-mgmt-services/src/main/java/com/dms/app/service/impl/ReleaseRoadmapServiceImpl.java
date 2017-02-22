@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 import com.dms.app.data.BaseDao;
 import com.dms.app.data.ReleaseRoadmapDao;
+import com.dms.app.model.KnownDifferencesGaps;
+import com.dms.app.model.ProjectDetail;
+import com.dms.app.model.ReleaseStatusDetail;
 import com.dms.app.service.ReleaseRoadmapService;
-import com.dms.model.KnownDifferencesGaps;
-import com.dms.model.ProjectDetail;
-import com.dms.model.ReleaseStatusDetail;
 
 /**
  * @author Richa Prasad

@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dms.app.data.ServiceTrackerDao;
+import com.dms.app.model.ProjectDetail;
+import com.dms.app.model.ProjectTrackDetail;
+import com.dms.app.model.ServiceDetail;
+import com.dms.app.model.ServiceRequirement;
+import com.dms.app.model.ServiceTrackerDetail;
 import com.dms.app.service.ServiceTrackerService;
-import com.dms.model.ProjectTrackDetail;
-import com.dms.model.ServiceDetail;
-import com.dms.model.ProjectDetail;
-import com.dms.model.ServiceRequirement;
-import com.dms.model.ServiceTrackerDetail;
 
 /**
  * @author Richa Prasad

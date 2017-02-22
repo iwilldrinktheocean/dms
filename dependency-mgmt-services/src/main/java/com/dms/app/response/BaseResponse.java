@@ -1,6 +1,6 @@
 package com.dms.app.response;
 
-import com.dms.model.ServiceResponseStatus;
+import com.dms.app.model.ServiceResponseStatus;
 
 /**
  * 

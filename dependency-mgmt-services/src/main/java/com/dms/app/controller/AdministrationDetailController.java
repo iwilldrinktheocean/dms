@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.administration.ApplicationAdministrationResponse;
 import com.dms.app.response.administration.CapabilitiesAdministrationResponse;
 import com.dms.app.response.administration.ProcessAdministrationResponse;
 import com.dms.app.response.administration.RequirementsAdministrationResponse;
 import com.dms.app.response.administration.ResourceManagementResponse;
 import com.dms.app.service.AdministrationDetailService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * @author Richa Prasad

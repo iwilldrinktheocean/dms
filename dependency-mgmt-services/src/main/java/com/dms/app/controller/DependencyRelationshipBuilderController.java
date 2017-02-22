@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.relationship.AppRelationshipBuilderResponse;
 import com.dms.app.response.relationship.CapabilityRelationshipBuilderResponse;
 import com.dms.app.response.relationship.DependencyRelationshipReportResponse;
@@ -19,7 +20,6 @@ import com.dms.app.response.relationship.ProjectRelationshipBuilderResponse;
 import com.dms.app.response.relationship.ReleaseRelationshipBuilderResponse;
 import com.dms.app.response.relationship.ServiceRelationshipBuilderResponse;
 import com.dms.app.service.DependencyRelationshipService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * @author Richa Prasad
@@ -55,7 +55,7 @@ public class DependencyRelationshipBuilderController {
 	}
 	
 	@RequestMapping(value = "/summary/relationship/capability/release/{releaseNum}", method = RequestMethod.GET)
-	public CapabilityRelationshipBuilderResponse getCapabilityRelationship(@PathParam("releaseNum") String releaseNum) {
+	public CapabilityRelationshipBuilderResponse getCapabilityRelationship(@javax.websocket.server.PathParam("releaseNum") String releaseNum) {
 		logger.info("Start getCapabilityRelationship ");
 
 		CapabilityRelationshipBuilderResponse capabilityRelationshipBuilder = null;

@@ -3,7 +3,7 @@
  */
 package com.dms.app.response;
 
-import com.dms.model.KnownDifferencesGaps;
+import com.dms.app.model.KnownDifferencesGaps;
 
 /**
  * @author Richa Prasad

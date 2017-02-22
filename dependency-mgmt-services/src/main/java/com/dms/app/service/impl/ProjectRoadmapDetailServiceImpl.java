@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dms.app.data.ProjectRoadmapDetailDao;
+import com.dms.app.model.ApplicationData;
+import com.dms.app.model.ProjectDetail;
+import com.dms.app.model.ProjectRoadMapDetail;
+import com.dms.app.model.ServiceDetail;
 import com.dms.app.service.ProjectRoadmapDetailService;
-import com.dms.model.ApplicationData;
-import com.dms.model.ProjectDetail;
-import com.dms.model.ProjectRoadMapDetail;
-import com.dms.model.ServiceDetail;
 
 /**
  * @author Richa Prasad
@@ -43,6 +43,11 @@ public class ProjectRoadmapDetailServiceImpl implements ProjectRoadmapDetailServ
 	@Override
 	public List<ServiceDetail> getImpactedServices(String projectId, String releaseId) {
 		return projectRoadmapDetailDao.getImpactedServices(projectId, releaseId);
+	}
+
+	@Override
+	public List<ProjectRoadMapDetail> getOtherCommentsOrHistory(String projectId, String releaseId) {
+		return projectRoadmapDetailDao.getOtherCommentsOrHistory(projectId, releaseId);
 	}
 
 }

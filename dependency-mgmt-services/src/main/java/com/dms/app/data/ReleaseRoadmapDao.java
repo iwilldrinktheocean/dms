@@ -8,9 +8,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.dms.model.KnownDifferencesGaps;
-import com.dms.model.ProjectDetail;
-import com.dms.model.ReleaseStatusDetail;
+import com.dms.app.model.KnownDifferencesGaps;
+import com.dms.app.model.ProjectDetail;
+import com.dms.app.model.ReleaseStatusDetail;
 
 /**
  * @author Richa Prasad

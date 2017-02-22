@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dms.app.response.tracker.ProjectTrackResponse;
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.tracker.ProjectDetailResponse;
 import com.dms.app.response.tracker.ServiceNamesResponse;
 import com.dms.app.response.tracker.ServiceRequirementResponse;
 import com.dms.app.response.tracker.ServiceTrackerDetailResponse;
 import com.dms.app.service.ServiceTrackerService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * @author Richa Prasad

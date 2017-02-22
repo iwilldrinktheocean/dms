@@ -5,7 +5,7 @@ package com.dms.app.response;
 
 import java.util.List;
 
-import com.dms.model.ReleaseDetail;
+import com.dms.app.model.ReleaseDetail;
 
 /**
  * @author Richa Prasad

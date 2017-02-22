@@ -3,8 +3,8 @@
  */
 package com.dms.app.response.tracker;
 
+import com.dms.app.model.ServiceTrackerDetail;
 import com.dms.app.response.BaseResponse;
-import com.dms.model.ServiceTrackerDetail;
 
 /**
  * @author rprasad017

@@ -22,13 +22,13 @@ import com.dms.app.data.mappers.DependencyByServiceResponseRowMapper;
 import com.dms.app.data.mappers.DependencyMetricResponseRowMapper;
 import com.dms.app.data.mappers.DependencyRelationshipMgmtResponseRowMapper;
 import com.dms.app.data.mappers.ResourceAllocationResponseRowMapper;
+import com.dms.app.model.ReleaseDetail;
 import com.dms.app.response.AdministrationResponse;
 import com.dms.app.response.DeliveryRoadMapResponse;
 import com.dms.app.response.DependencyByServiceResponse;
 import com.dms.app.response.DependencyMetricResponse;
 import com.dms.app.response.DependencyRelationshipMgmtResponse;
 import com.dms.app.response.ResourceAllocationResponse;
-import com.dms.model.ReleaseDetail;
 
 /**
  * @author Richa Prasad

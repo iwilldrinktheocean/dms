@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.ApplicationDataResponse;
 import com.dms.app.response.ProjectRoadmapDetailResponse;
+import com.dms.app.response.ProjectRoadmapHistoryResponse;
 import com.dms.app.response.tracker.ProjectDetailResponse;
 import com.dms.app.response.tracker.ServiceNamesResponse;
 import com.dms.app.service.ProjectRoadmapDetailService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * @author Richa Prasad
@@ -112,5 +113,26 @@ public class ProjectRoadmapDetailController {
 		}
 		logger.info("End getImpactedServices");
 		return services;
+	}
+	
+	@RequestMapping(value = "/project/roadmap/detail/other/comments/history", method = RequestMethod.GET)
+	public ProjectRoadmapHistoryResponse getOtherCommentsOrHistory(@RequestParam("projectId") String projectId,
+			@RequestParam("releaseId") String releaseId) {
+		logger.info("Start getOtherCommentsOrHistory");
+		
+		ProjectRoadmapHistoryResponse history = new ProjectRoadmapHistoryResponse();
+		try {
+			history.setProjectRoadMapDetails(projectRoadmapDetailService.getOtherCommentsOrHistory(projectId, releaseId));
+			history.setStatus(ServiceResponseStatus.SUCCESS);
+			history.setMessage(ServiceResponseStatus.SUCCESS.name());
+			history.setDescription(ServiceResponseStatus.SUCCESS.name());
+		} catch (Exception e) {
+			logger.debug(e);
+			history.setStatus(ServiceResponseStatus.FAILURE);
+			history.setMessage("Unable get OtherCommentsOrHistory");
+			history.setDescription(e.getMessage());
+		}
+		logger.info("End getOtherCommentsOrHistory");
+		return history;
 	}
 }

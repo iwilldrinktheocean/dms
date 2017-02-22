@@ -2,7 +2,7 @@ package com.dms.app.response;
 
 import java.util.List;
 
-import com.dms.model.UserProfile;
+import com.dms.app.model.UserProfile;
 
 
 /**

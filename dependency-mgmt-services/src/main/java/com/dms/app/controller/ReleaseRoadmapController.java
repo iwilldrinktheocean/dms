@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.BarChartResponse;
 import com.dms.app.response.KnownDifferencesGapsResponse;
 import com.dms.app.response.ReleaseRoadmapProgressResponse;
 import com.dms.app.response.ReleaseStatusDetailResponse;
 import com.dms.app.response.tracker.ProjectDetailResponse;
 import com.dms.app.service.ReleaseRoadmapService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * @author Richa Prasad

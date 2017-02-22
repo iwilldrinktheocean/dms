@@ -3,7 +3,7 @@
  */
 package com.dms.app.response;
 
-import com.dms.model.ReleaseStatusDetail;
+import com.dms.app.model.ReleaseStatusDetail;
 
 /**
  * @author Richa Prasad

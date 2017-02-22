@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.CapabilitiesResponse;
 import com.dms.app.response.CapabilityReportingResponse;
 import com.dms.app.service.CapabilityMgmtService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * 

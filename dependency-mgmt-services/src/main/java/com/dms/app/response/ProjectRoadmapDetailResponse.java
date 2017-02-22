@@ -3,7 +3,7 @@
  */
 package com.dms.app.response;
 
-import com.dms.model.ProjectRoadMapDetail;
+import com.dms.app.model.ProjectRoadMapDetail;
 
 /**
  * @author Richa Prasad

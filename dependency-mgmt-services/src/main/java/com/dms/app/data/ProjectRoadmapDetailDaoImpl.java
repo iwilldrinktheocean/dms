@@ -16,10 +16,10 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
 import com.dms.app.data.mappers.ProjectRoadMapDetailRowMapper;
-import com.dms.model.ApplicationData;
-import com.dms.model.ProjectDetail;
-import com.dms.model.ProjectRoadMapDetail;
-import com.dms.model.ServiceDetail;
+import com.dms.app.model.ApplicationData;
+import com.dms.app.model.ProjectDetail;
+import com.dms.app.model.ProjectRoadMapDetail;
+import com.dms.app.model.ServiceDetail;
 
 /**
  * @author Richa Prasad
@@ -34,7 +34,17 @@ public class ProjectRoadmapDetailDaoImpl extends BaseDao implements ProjectRoadm
 		SimpleJdbcCall procPrjDesc = new SimpleJdbcCall(getJdbcTemplate());
 		
 		procPrjDesc.withProcedureName("project_roadmap_detail_desc")	
-		.returningResultSet("projectDetails", new ProjectRoadMapDetailRowMapper())
+		.returningResultSet("projectDetails", new RowMapper<ProjectRoadMapDetail>() {
+
+			@Override
+			public ProjectRoadMapDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
+				ProjectRoadMapDetail projectRoadMapDetail = new ProjectRoadMapDetail();
+				projectRoadMapDetail.setProjectDesc(rs.getString("DESCRIPTION"));	
+				projectRoadMapDetail.setStatusComment(rs.getString("STATUS_COMMENT"));
+				projectRoadMapDetail.setProjectStatus(rs.getLong("PROJECT_STATUS"));
+				return projectRoadMapDetail;
+			}
+		})
 		.declareParameters(new SqlParameter("projectId", Types.VARCHAR), new SqlParameter("releaseId", Types.DECIMAL));
 		
 		HashMap<String, Object> input = new HashMap<String, Object>();
@@ -131,6 +141,25 @@ public class ProjectRoadmapDetailDaoImpl extends BaseDao implements ProjectRoadm
 		
 		List<ServiceDetail> impactedServices = (List<ServiceDetail>) data.get("impactedServices");
 		return impactedServices;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProjectRoadMapDetail> getOtherCommentsOrHistory(String projectId, String releaseId) {
+		SimpleJdbcCall procPrjHistory = new SimpleJdbcCall(getJdbcTemplate());
+		
+		procPrjHistory.withProcedureName("project_roadmap_detail_history")		
+		.returningResultSet("history", new ProjectRoadMapDetailRowMapper())	
+		.declareParameters(new SqlParameter("projectId", Types.VARCHAR), new SqlParameter("releaseId", Types.DECIMAL));
+		
+		HashMap<String, Object> input = new HashMap<String, Object>();
+		input.put("projectId", projectId);
+		input.put("releaseId", releaseId);
+
+		Map<String, Object> data = procPrjHistory.execute(input);
+		
+		List<ProjectRoadMapDetail> history = (List<ProjectRoadMapDetail>) data.get("history");
+		return history;
 	}
 
 }

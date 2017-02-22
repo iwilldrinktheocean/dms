@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dms.app.model.ServiceResponseStatus;
 import com.dms.app.response.ServiceMaintenanceTableResponse;
 import com.dms.app.service.ServiceMgmtService;
-import com.dms.model.ServiceResponseStatus;
 
 /**
  * @author Syam

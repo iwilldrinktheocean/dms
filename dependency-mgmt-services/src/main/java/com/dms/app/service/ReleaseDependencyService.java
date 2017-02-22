@@ -7,13 +7,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.dms.app.model.ReleaseDetail;
 import com.dms.app.response.AdministrationResponse;
 import com.dms.app.response.DeliveryRoadMapResponse;
 import com.dms.app.response.DependencyByServiceResponse;
 import com.dms.app.response.DependencyMetricResponse;
 import com.dms.app.response.DependencyRelationshipMgmtResponse;
 import com.dms.app.response.ResourceAllocationResponse;
-import com.dms.model.ReleaseDetail;
 
 /**
  * @author Richa Prasad

@@ -15,14 +15,14 @@ import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
-import com.dms.model.ProjectTrackDetail;
-import com.dms.model.ServiceDetail;
 import com.dms.app.data.mappers.tracker.ProjectDetailRowMapper;
 import com.dms.app.data.mappers.tracker.ProjectTrackDetailRowMapper;
 import com.dms.app.data.mappers.tracker.ServiceRequirementRowMapper;
-import com.dms.model.ProjectDetail;
-import com.dms.model.ServiceRequirement;
-import com.dms.model.ServiceTrackerDetail;
+import com.dms.app.model.ProjectDetail;
+import com.dms.app.model.ProjectTrackDetail;
+import com.dms.app.model.ServiceDetail;
+import com.dms.app.model.ServiceRequirement;
+import com.dms.app.model.ServiceTrackerDetail;
 
 /**
  * @author Richa Prasad

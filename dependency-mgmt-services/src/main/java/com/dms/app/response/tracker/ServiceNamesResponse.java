@@ -5,8 +5,8 @@ package com.dms.app.response.tracker;
 
 import java.util.List;
 
+import com.dms.app.model.ServiceDetail;
 import com.dms.app.response.BaseResponse;
-import com.dms.model.ServiceDetail;
 
 /**
  * @author Richa Prasad

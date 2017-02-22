@@ -2,8 +2,8 @@ package com.dms.app.response.tracker;
 
 import java.util.List;
 
+import com.dms.app.model.ServiceRequirement;
 import com.dms.app.response.BaseResponse;
-import com.dms.model.ServiceRequirement;
 
 /**
  * @author Richa Prasad

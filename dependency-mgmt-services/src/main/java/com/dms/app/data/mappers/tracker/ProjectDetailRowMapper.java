@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.dms.model.ProjectDetail;
+import com.dms.app.model.ProjectDetail;
 
 /**
  * @author Richa Prasad
